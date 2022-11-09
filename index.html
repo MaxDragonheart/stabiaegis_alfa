@@ -175,7 +175,340 @@
                 </h2>
                 <div id="collapseTrasporti" class="accordion-collapse collapse" aria-labelledby="trasporti" data-bs-parent="#accordionExample">
                   <div class="accordion-body">
-                    <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+
+                    <div class="control-box">
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" name="switch-basemap" id="antenne">
+                            <label class="custom-control-label" for="antenne">Antenne</label>
+                        </div>
+                        <div class="text-end">
+                            <a class="item-legend" data-bs-toggle="collapse" href="#antennelegend"
+                                role="button" aria-expanded="false" aria-controls="antennelegend"
+                                data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
+                                <i class="fas fa-book"></i>
+                            </a>
+                            <div class="collapse" id="antennelegend">
+                              <div id="legendantenne"></div>
+                            </div>
+                        </div>
+                        <div class="text-end">
+                            <a class="item-controls" data-bs-toggle="collapse" href="#antennecontrols"
+                                role="button" aria-expanded="false" aria-controls="antennecontrols"
+                                data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
+                                <i class="fas fa-cogs"></i>
+                            </a>
+                            <div class="collapse" id="antennecontrols">
+                              <div class="slider-container">
+                                <input type="range" class="form-range"
+                                        min="0" max="100" value="100" id="antenneslider">
+                                <label class="">Trasparenza: <span id="OUTPUTantenne"></span> %</label>
+                              </div>
+                              <div class="counter-container">
+                                <div class="counter" id="">
+                                  <input class="counter-object" id="antennezIndex"
+                                          type="number" name="zIndex" min="0" max="99" step="1"
+                                          placeholder="0"
+                                          value="0">
+                                </div>
+                                <label class="">z-Index</label>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="control-box">
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" name="switch-basemap" id="reteTelefonica">
+                            <label class="custom-control-label" for="reteTelefonica">Rete Telefonica</label>
+                        </div>
+                        <div class="text-end">
+                            <a class="item-legend" data-bs-toggle="collapse" href="#reteTelefonicalegend"
+                                role="button" aria-expanded="false" aria-controls="reteTelefonicalegend"
+                                data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
+                                <i class="fas fa-book"></i>
+                            </a>
+                            <div class="collapse" id="reteTelefonicalegend">
+                              <div id="legendreteTelefonica"></div>
+                            </div>
+                        </div>
+                        <div class="text-end">
+                            <a class="item-controls" data-bs-toggle="collapse" href="#reteTelefonicacontrols"
+                                role="button" aria-expanded="false" aria-controls="reteTelefonicacontrols"
+                                data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
+                                <i class="fas fa-cogs"></i>
+                            </a>
+                            <div class="collapse" id="reteTelefonicacontrols">
+                              <div class="slider-container">
+                                <input type="range" class="form-range"
+                                        min="0" max="100" value="100" id="reteTelefonicaslider">
+                                <label class="">Trasparenza: <span id="OUTPUTreteTelefonica"></span> %</label>
+                              </div>
+                              <div class="counter-container">
+                                <div class="counter" id="">
+                                  <input class="counter-object" id="reteTelefonicazIndex"
+                                          type="number" name="zIndex" min="0" max="99" step="1"
+                                          placeholder="0"
+                                          value="0">
+                                </div>
+                                <label class="">z-Index</label>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="control-box">
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" name="switch-basemap" id="collettoreFognario">
+                            <label class="custom-control-label" for="collettoreFognario">Collettore fognario</label>
+                        </div>
+                        <div class="text-end">
+                            <a class="item-legend" data-bs-toggle="collapse" href="#collettoreFognariolegend"
+                                role="button" aria-expanded="false" aria-controls="collettoreFognariolegend"
+                                data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
+                                <i class="fas fa-book"></i>
+                            </a>
+                            <div class="collapse" id="collettoreFognariolegend">
+                              <div id="legendcollettoreFognario"></div>
+                            </div>
+                        </div>
+                        <div class="text-end">
+                            <a class="item-controls" data-bs-toggle="collapse" href="#collettoreFognariocontrols"
+                                role="button" aria-expanded="false" aria-controls="collettoreFognariocontrols"
+                                data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
+                                <i class="fas fa-cogs"></i>
+                            </a>
+                            <div class="collapse" id="collettoreFognariocontrols">
+                              <div class="slider-container">
+                                <input type="range" class="form-range"
+                                        min="0" max="100" value="100" id="collettoreFognarioslider">
+                                <label class="">Trasparenza: <span id="OUTPUTcollettoreFognario"></span> %</label>
+                              </div>
+                              <div class="counter-container">
+                                <div class="counter" id="">
+                                  <input class="counter-object" id="collettoreFognariozIndex"
+                                          type="number" name="zIndex" min="0" max="99" step="1"
+                                          placeholder="0"
+                                          value="0">
+                                </div>
+                                <label class="">z-Index</label>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="control-box">
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" name="switch-basemap" id="depuratore">
+                            <label class="custom-control-label" for="depuratore">Depuratore</label>
+                        </div>
+                        <div class="text-end">
+                            <a class="item-legend" data-bs-toggle="collapse" href="#depuratorelegend"
+                                role="button" aria-expanded="false" aria-controls="depuratorelegend"
+                                data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
+                                <i class="fas fa-book"></i>
+                            </a>
+                            <div class="collapse" id="depuratorelegend">
+                              <div id="legenddepuratore"></div>
+                            </div>
+                        </div>
+                        <div class="text-end">
+                            <a class="item-controls" data-bs-toggle="collapse" href="#depuratorecontrols"
+                                role="button" aria-expanded="false" aria-controls="depuratorecontrols"
+                                data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
+                                <i class="fas fa-cogs"></i>
+                            </a>
+                            <div class="collapse" id="depuratorecontrols">
+                              <div class="slider-container">
+                                <input type="range" class="form-range"
+                                        min="0" max="100" value="100" id="depuratoreslider">
+                                <label class="">Trasparenza: <span id="OUTPUTdepuratore"></span> %</label>
+                              </div>
+                              <div class="counter-container">
+                                <div class="counter" id="">
+                                  <input class="counter-object" id="depuratorezIndex"
+                                          type="number" name="zIndex" min="0" max="99" step="1"
+                                          placeholder="0"
+                                          value="0">
+                                </div>
+                                <label class="">z-Index</label>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="control-box">
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" name="switch-basemap" id="elettrodottoLocale">
+                            <label class="custom-control-label" for="elettrodottoLocale">Elettrodotto Locale</label>
+                        </div>
+                        <div class="text-end">
+                            <a class="item-legend" data-bs-toggle="collapse" href="#elettrodottoLocalelegend"
+                                role="button" aria-expanded="false" aria-controls="elettrodottoLocalelegend"
+                                data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
+                                <i class="fas fa-book"></i>
+                            </a>
+                            <div class="collapse" id="elettrodottoLocalelegend">
+                              <div id="legendelettrodottoLocale"></div>
+                            </div>
+                        </div>
+                        <div class="text-end">
+                            <a class="item-controls" data-bs-toggle="collapse" href="#elettrodottoLocalecontrols"
+                                role="button" aria-expanded="false" aria-controls="elettrodottoLocalecontrols"
+                                data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
+                                <i class="fas fa-cogs"></i>
+                            </a>
+                            <div class="collapse" id="elettrodottoLocalecontrols">
+                              <div class="slider-container">
+                                <input type="range" class="form-range"
+                                        min="0" max="100" value="100" id="elettrodottoLocaleslider">
+                                <label class="">Trasparenza: <span id="OUTPUTelettrodottoLocale"></span> %</label>
+                              </div>
+                              <div class="counter-container">
+                                <div class="counter" id="">
+                                  <input class="counter-object" id="elettrodottoLocalezIndex"
+                                          type="number" name="zIndex" min="0" max="99" step="1"
+                                          placeholder="0"
+                                          value="0">
+                                </div>
+                                <label class="">z-Index</label>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="control-box">
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" name="switch-basemap" id="retePubblicaIlluminazione">
+                            <label class="custom-control-label" for="retePubblicaIlluminazione">Rete Pubblica Illuminazione</label>
+                        </div>
+                        <div class="text-end">
+                            <a class="item-legend" data-bs-toggle="collapse" href="#retePubblicaIlluminazionelegend"
+                                role="button" aria-expanded="false" aria-controls="retePubblicaIlluminazionelegend"
+                                data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
+                                <i class="fas fa-book"></i>
+                            </a>
+                            <div class="collapse" id="retePubblicaIlluminazionelegend">
+                              <div id="legendretePubblicaIlluminazione"></div>
+                            </div>
+                        </div>
+                        <div class="text-end">
+                            <a class="item-controls" data-bs-toggle="collapse" href="#retePubblicaIlluminazionecontrols"
+                                role="button" aria-expanded="false" aria-controls="retePubblicaIlluminazionecontrols"
+                                data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
+                                <i class="fas fa-cogs"></i>
+                            </a>
+                            <div class="collapse" id="retePubblicaIlluminazionecontrols">
+                              <div class="slider-container">
+                                <input type="range" class="form-range"
+                                        min="0" max="100" value="100" id="retePubblicaIlluminazioneslider">
+                                <label class="">Trasparenza: <span id="OUTPUTretePubblicaIlluminazione"></span> %</label>
+                              </div>
+                              <div class="counter-container">
+                                <div class="counter" id="">
+                                  <input class="counter-object" id="retePubblicaIlluminazionezIndex"
+                                          type="number" name="zIndex" min="0" max="99" step="1"
+                                          placeholder="0"
+                                          value="0">
+                                </div>
+                                <label class="">z-Index</label>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="demanio">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDemanio" aria-expanded="false" aria-controls="collapseDemanio">
+                    Demanio
+                  </button>
+                </h2>
+                <div id="collapseDemanio" class="accordion-collapse collapse" aria-labelledby="demanio" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+
+                    <div class="control-box">
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" name="switch-basemap" id="dividenteDemaniale">
+                            <label class="custom-control-label" for="dividenteDemaniale">Dividente Demaniale</label>
+                        </div>
+                        <div class="text-end">
+                            <a class="item-legend" data-bs-toggle="collapse" href="#dividenteDemanialelegend"
+                                role="button" aria-expanded="false" aria-controls="dividenteDemanialelegend"
+                                data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
+                                <i class="fas fa-book"></i>
+                            </a>
+                            <div class="collapse" id="dividenteDemanialelegend">
+                              <div id="legenddividenteDemaniale"></div>
+                            </div>
+                        </div>
+                        <div class="text-end">
+                            <a class="item-controls" data-bs-toggle="collapse" href="#dividenteDemanialecontrols"
+                                role="button" aria-expanded="false" aria-controls="dividenteDemanialecontrols"
+                                data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
+                                <i class="fas fa-cogs"></i>
+                            </a>
+                            <div class="collapse" id="dividenteDemanialecontrols">
+                              <div class="slider-container">
+                                <input type="range" class="form-range"
+                                        min="0" max="100" value="100" id="dividenteDemanialeslider">
+                                <label class="">Trasparenza: <span id="OUTPUTdividenteDemaniale"></span> %</label>
+                              </div>
+                              <div class="counter-container">
+                                <div class="counter" id="">
+                                  <input class="counter-object" id="dividenteDemanialezIndex"
+                                          type="number" name="zIndex" min="0" max="99" step="1"
+                                          placeholder="0"
+                                          value="0">
+                                </div>
+                                <label class="">z-Index</label>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="control-box">
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" name="switch-basemap" id="proprietaPubbliche">
+                            <label class="custom-control-label" for="proprietaPubbliche">Proprietà Pubbliche</label>
+                        </div>
+                        <div class="text-end">
+                            <a class="item-legend" data-bs-toggle="collapse" href="#proprietaPubblichelegend"
+                                role="button" aria-expanded="false" aria-controls="proprietaPubblichelegend"
+                                data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
+                                <i class="fas fa-book"></i>
+                            </a>
+                            <div class="collapse" id="proprietaPubblichelegend">
+                              <div id="legendproprietaPubbliche"></div>
+                            </div>
+                        </div>
+                        <div class="text-end">
+                            <a class="item-controls" data-bs-toggle="collapse" href="#proprietaPubblichecontrols"
+                                role="button" aria-expanded="false" aria-controls="proprietaPubblichecontrols"
+                                data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
+                                <i class="fas fa-cogs"></i>
+                            </a>
+                            <div class="collapse" id="proprietaPubblichecontrols">
+                              <div class="slider-container">
+                                <input type="range" class="form-range"
+                                        min="0" max="100" value="100" id="proprietaPubblicheslider">
+                                <label class="">Trasparenza: <span id="OUTPUTproprietaPubbliche"></span> %</label>
+                              </div>
+                              <div class="counter-container">
+                                <div class="counter" id="">
+                                  <input class="counter-object" id="proprietaPubblichezIndex"
+                                          type="number" name="zIndex" min="0" max="99" step="1"
+                                          placeholder="0"
+                                          value="0">
+                                </div>
+                                <label class="">z-Index</label>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+
                   </div>
                 </div>
               </div>
@@ -201,7 +534,87 @@
                 </h2>
                 <div id="collapseDem" class="accordion-collapse collapse" aria-labelledby="dem" data-bs-parent="#accordionExample">
                   <div class="accordion-body">
-                    <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+
+                    <div class="control-box">
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" name="switch-basemap" id="dsmLidar">
+                            <label class="custom-control-label" for="dsmLidar">DSM LiDAR 1m</label>
+                        </div>
+                        <div class="text-end">
+                            <a class="item-legend" data-bs-toggle="collapse" href="#dsmLidarlegend"
+                                role="button" aria-expanded="false" aria-controls="dsmLidarlegend"
+                                data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
+                                <i class="fas fa-book"></i>
+                            </a>
+                            <div class="collapse" id="dsmLidarlegend">
+                              <div id="legenddsmLidar"></div>
+                            </div>
+                        </div>
+                        <div class="text-end">
+                            <a class="item-controls" data-bs-toggle="collapse" href="#dsmLidarcontrols"
+                                role="button" aria-expanded="false" aria-controls="dsmLidarcontrols"
+                                data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
+                                <i class="fas fa-cogs"></i>
+                            </a>
+                            <div class="collapse" id="dsmLidarcontrols">
+                              <div class="slider-container">
+                                <input type="range" class="form-range"
+                                        min="0" max="100" value="100" id="dsmLidarslider">
+                                <label class="">Trasparenza: <span id="OUTPUTdsmLidar"></span> %</label>
+                              </div>
+                              <div class="counter-container">
+                                <div class="counter" id="">
+                                  <input class="counter-object" id="dsmLidarzIndex"
+                                          type="number" name="zIndex" min="0" max="99" step="1"
+                                          placeholder="0"
+                                          value="0">
+                                </div>
+                                <label class="">z-Index</label>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="control-box">
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" name="switch-basemap" id="dtmLidar">
+                            <label class="custom-control-label" for="dtmLidar">DTM LiDAR 1m</label>
+                        </div>
+                        <div class="text-end">
+                            <a class="item-legend" data-bs-toggle="collapse" href="#dtmLidarlegend"
+                                role="button" aria-expanded="false" aria-controls="dtmLidarlegend"
+                                data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
+                                <i class="fas fa-book"></i>
+                            </a>
+                            <div class="collapse" id="dtmLidarlegend">
+                              <div id="legenddtmLidar"></div>
+                            </div>
+                        </div>
+                        <div class="text-end">
+                            <a class="item-controls" data-bs-toggle="collapse" href="#dtmLidarcontrols"
+                                role="button" aria-expanded="false" aria-controls="dtmLidarcontrols"
+                                data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
+                                <i class="fas fa-cogs"></i>
+                            </a>
+                            <div class="collapse" id="dtmLidarcontrols">
+                              <div class="slider-container">
+                                <input type="range" class="form-range"
+                                        min="0" max="100" value="100" id="dtmLidarslider">
+                                <label class="">Trasparenza: <span id="OUTPUTdtmLidar"></span> %</label>
+                              </div>
+                              <div class="counter-container">
+                                <div class="counter" id="">
+                                  <input class="counter-object" id="dtmLidarzIndex"
+                                          type="number" name="zIndex" min="0" max="99" step="1"
+                                          placeholder="0"
+                                          value="0">
+                                </div>
+                                <label class="">z-Index</label>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+
                   </div>
                 </div>
               </div>
@@ -213,10 +626,36 @@
         <div class="col-9">
           <div class="map-wrapper">
             <div class="map" id='map'></div>
+
+            <!-- <div class="btn-map-legend-magellan">
+              <button class="btn btn-map" onclick="confineComunale.zoomOnLayer(50, 50, 50, 50, 1000)">
+                <span data-toggle="tooltip" data-placement="top" title="Zoom alla mappa">
+                  <i class="fas fa-globe"></i>
+                </span>
+              </button>
+            </div> -->
+
           </div>
         </div>
 
     </div>
+
+    <div class="modal fade" id="clickOnPixelModal" tabindex="-1" aria-labelledby="clickOnPixelModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="clickOnPixelModalLabel">Modal title</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div id="layerInfo">
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
 </div>
 
 
@@ -333,5 +772,6 @@ let isChecked = $(this).is(':checked');
 </script>
 <script type="text/javascript"
     src="./assets/js/layers.js"></script>
+
 </body>
 </html>

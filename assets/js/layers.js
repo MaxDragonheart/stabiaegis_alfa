@@ -17,6 +17,7 @@ var confineComunale = new ol.layer.Tile({
     opacity: 1.00
 });
 map.addLayer(confineComunale);
+// getElementInfo(""layerInfo"", confineComunale);
 
 var antenne = new ol.layer.Tile({
     source: new ol.source.TileWMS({
@@ -38,6 +39,7 @@ $('#antenne').on('change', function() {
         getElementLegendImg('legendantenne', antenne, wmsSource, 'antenne');
         layerOpacity(antenne, 'antenneslider', 'OUTPUTantenne');
         layerZIndex(antenne, 'antennezIndex', 'OUTPUTantenne');
+        getElementInfo("layerInfo", antenne);
     } else {
         map.removeLayer(antenne);
     }
@@ -63,6 +65,7 @@ $('#reteTelefonica').on('change', function() {
         getElementLegendImg('legendreteTelefonica', reteTelefonica, wmsSource, 'rete_telefonica');
         layerOpacity(reteTelefonica, 'reteTelefonicaslider', 'OUTPUTreteTelefonica');
         layerZIndex(reteTelefonica, 'reteTelefonicazIndex', 'OUTPUTreteTelefonica');
+        getElementInfo("layerInfo", reteTelefonica);
     } else {
         map.removeLayer(reteTelefonica);
     }
@@ -88,6 +91,7 @@ $('#collettoreFognario').on('change', function() {
         getElementLegendImg('legendcollettoreFognario', collettoreFognario, wmsSource, 'collettore_fognario');
         layerOpacity(collettoreFognario, 'collettoreFognarioslider', 'OUTPUTcollettoreFognario');
         layerZIndex(collettoreFognario, 'collettoreFognariozIndex', 'OUTPUTcollettoreFognario');
+        getElementInfo("layerInfo", collettoreFognario);
     } else {
         map.removeLayer(collettoreFognario);
     }
@@ -113,6 +117,7 @@ $('#depuratore').on('change', function() {
         getElementLegendImg('legenddepuratore', depuratore, wmsSource, 'depuratore');
         layerOpacity(depuratore, 'depuratoreslider', 'OUTPUTdepuratore');
         layerZIndex(depuratore, 'depuratorezIndex', 'OUTPUTdepuratore');
+        getElementInfo("layerInfo", depuratore);
     } else {
         map.removeLayer(depuratore);
     }
@@ -138,6 +143,7 @@ $('#elettrodottoLocale').on('change', function() {
         getElementLegendImg('legendelettrodottoLocale', elettrodottoLocale, wmsSource, 'elettrodotto_locale');
         layerOpacity(elettrodottoLocale, 'elettrodottoLocaleslider', 'OUTPUTelettrodottoLocale');
         layerZIndex(elettrodottoLocale, 'elettrodottoLocalezIndex', 'OUTPUTelettrodottoLocale');
+        getElementInfo("layerInfo", elettrodottoLocale);
     } else {
         map.removeLayer(elettrodottoLocale);
     }
@@ -163,6 +169,7 @@ $('#retePubblicaIlluminazione').on('change', function() {
         getElementLegendImg('legendretePubblicaIlluminazione', retePubblicaIlluminazione, wmsSource, 'rete_pubblica_illuminazione');
         layerOpacity(retePubblicaIlluminazione, 'retePubblicaIlluminazioneslider', 'OUTPUTretePubblicaIlluminazione');
         layerZIndex(retePubblicaIlluminazione, 'retePubblicaIlluminazionezIndex', 'OUTPUTretePubblicaIlluminazione');
+        getElementInfo("layerInfo", retePubblicaIlluminazione);
     } else {
         map.removeLayer(retePubblicaIlluminazione);
     }
@@ -188,6 +195,7 @@ $('#edificiPubbliciCensiti').on('change', function() {
         getElementLegendImg('legendedificiPubbliciCensiti', edificiPubbliciCensiti, wmsSource, 'edifici_pubblici_censiti');
         layerOpacity(edificiPubbliciCensiti, 'edificiPubbliciCensitislider', 'OUTPUTedificiPubbliciCensiti');
         layerZIndex(edificiPubbliciCensiti, 'edificiPubbliciCensitizIndex', 'OUTPUTedificiPubbliciCensiti');
+        getElementInfo("layerInfo", edificiPubbliciCensiti);
     } else {
         map.removeLayer(edificiPubbliciCensiti);
     }
@@ -213,6 +221,7 @@ $('#dividenteDemaniale').on('change', function() {
         getElementLegendImg('legenddividenteDemaniale', dividenteDemaniale, wmsSource, 'dividente_demaniale');
         layerOpacity(dividenteDemaniale, 'dividenteDemanialeslider', 'OUTPUTdividenteDemaniale');
         layerZIndex(dividenteDemaniale, 'dividenteDemanialezIndex', 'OUTPUTdividenteDemaniale');
+        getElementInfo("layerInfo", dividenteDemaniale);
     } else {
         map.removeLayer(dividenteDemaniale);
     }
@@ -238,6 +247,7 @@ $('#proprietaPubbliche').on('change', function() {
         getElementLegendImg('legendproprietaPubbliche', proprietaPubbliche, wmsSource, 'proprieta_pubbliche');
         layerOpacity(proprietaPubbliche, 'proprietaPubblicheslider', 'OUTPUTproprietaPubbliche');
         layerZIndex(proprietaPubbliche, 'proprietaPubblichezIndex', 'OUTPUTproprietaPubbliche');
+        getElementInfo("layerInfo", proprietaPubbliche);
     } else {
         map.removeLayer(proprietaPubbliche);
     }
@@ -263,6 +273,7 @@ $('#dsmLidar').on('change', function() {
         getElementLegendImg('legenddsmLidar', dsmLidar, wmsSource, 'dsm_lidar_1m');
         layerOpacity(dsmLidar, 'dsmLidarslider', 'OUTPUTdsmLidar');
         layerZIndex(dsmLidar, 'dsmLidarzIndex', 'OUTPUTdsmLidar');
+        getElementInfo("layerInfo", dsmLidar);
     } else {
         map.removeLayer(dsmLidar);
     }
@@ -288,6 +299,7 @@ $('#dtmLidar').on('change', function() {
         getElementLegendImg('legenddtmLidar', dtmLidar, wmsSource, 'dtm_lidar_1m');
         layerOpacity(dtmLidar, 'dtmLidarslider', 'OUTPUTdtmLidar');
         layerZIndex(dtmLidar, 'dtmLidarzIndex', 'OUTPUTdtmLidar');
+        getElementInfo("layerInfo", dtmLidar);
     } else {
         map.removeLayer(dtmLidar);
     }
