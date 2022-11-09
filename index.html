@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="title" content="StabiaeGIS - versione alfa">
+    <meta name="description" content="Versione alfa del futuro WebGIS del Comune di Castallammare di Stabia" />
+    <meta name="author" content="Massimiliano Moraca">
+    <meta http-equiv="Reply-to" content="info@massimilianomoraca.it">
+    <meta http-equiv="content-language" content="IT">
+    <meta http-equiv="Content-Type" content="text/html; iso-8859-1">
+    <meta name="robots" content="INDEX,FOLLOW">
+    <meta name="creation_Date" content="01 Novambre 2022">
+    <meta name="revisit-after" content="7 days">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>StabiaeGIS - versione alfa</title>
+    <link rel="icon" href="./assets/img/Castellammare_di_Stabia-Stemma.png" type="image/gif">
+
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+          integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+          crossorigin="anonymous"></script>
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+      integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+      crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+      integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+      crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous">
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+        crossorigin="anonymous">
+    <script defer src="https://use.fontawesome.com/releases/v5.8.1/js/all.js"
+          integrity="sha384-g5uSoOSBd7KkhAMlnQILrecXvzst9TdC09/VM+pjDTCM+1il8RHz5fKANTFFb+gQ"
+          crossorigin="anonymous"></script>
+    <!-- OpenLayers 6 -->
+    <link rel="stylesheet"
+          href="./assets/openlayers6.14.1/ol.css">
+    <script type="text/javascript"
+            src="./assets/openlayers6.14.1/ol.js"></script>
+    <!-- ol-ext -->
+    <link rel="stylesheet" href="https://cdn.rawgit.com/Viglino/ol-ext/master/dist/ol-ext.min.css" />
+    <script type="text/javascript" src="https://cdn.rawgit.com/Viglino/ol-ext/master/dist/ol-ext.min.js"></script>
+    <!-- Plotly JS -->
+    <script src="https://cdn.plot.ly/plotly-2.11.1.min.js"></script>
+    <!-- Custom -->
+    <link rel="stylesheet"
+          href="./assets/css/ol_custom.css">
+    <link rel="stylesheet"
+          href="./assets/css/map.css">
+    <script type="text/javascript"
+        src="./assets/js/map.js"></script>
+</head>
+<body>
+
+<div class="map-wrapper">
+
+    <div class="map" id='map'></div>
+
+</div>
+
+<div class="btn-map-legend">
+    <button class="btn btn-map" type="button" data-bs-toggle="offcanvas" data-bs-target="#openMapControls" aria-controls="openMapControls">
+        <span data-toggle="tooltip" data-placement="top" title="Descrizione">
+            <i class="fas fa-layer-group"></i>
+        </span>
+    </button>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="openMapControls" aria-labelledby="openMapControlsLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="openMapControlsLabel">StabiaeGIS - versione alfa</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div class="px-2">
+
+
+                <h5>Basemap</h5>
+                <div class="custom-control custom-switch">
+                    <input type="radio" class="custom-control-input" name="switch-basemap" id="BASEMAP_OSM" checked>
+                    <label class="custom-control-label" for="BASEMAP_OSM">Lite</label>
+                </div>
+                <div class="custom-control custom-switch">
+                    <input type="radio" class="custom-control-input" name="switch-basemap" id="BASEMAP_OUTDOORS">
+                    <label class="custom-control-label" for="BASEMAP_OUTDOORS">Topographic</label>
+                </div>
+                <div class="custom-control custom-switch">
+                    <input type="radio" class="custom-control-input" name="switch-basemap" id="BASEMAP_MONOCROMEGRAY">
+                    <label class="custom-control-label" for="BASEMAP_MONOCROMEGRAY">Monocrome Gray</label>
+                </div>
+                <div class="custom-control custom-switch">
+                    <input type="radio" class="custom-control-input" name="switch-basemap" id="BASEMAP_SATELLITE">
+                    <label class="custom-control-label" for="BASEMAP_SATELLITE">Satellite</label>
+                </div>
+
+                <hr>
+                <h5>Layers</h5>
+
+                <div class="control-box">
+                    <div class="custom-control custom-switch">
+                        <input type="checkbox" class="custom-control-input" name="switch-basemap" id="antenne">
+                        <label class="custom-control-label" for="antenne">Antenne</label>
+                    </div>
+                    <div class="text-end">
+                        <a class="item-legend" data-bs-toggle="collapse" href="#antennelegend"
+                            role="button" aria-expanded="false" aria-controls="antennelegend"
+                            data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
+                            <i class="fas fa-book"></i>
+                        </a>
+                        <div class="collapse" id="antennelegend">
+                          <div id="legendantenne"></div>
+                        </div>
+                    </div>
+                    <div class="text-end">
+                        <a class="item-controls" data-bs-toggle="collapse" href="#antennecontrols"
+                            role="button" aria-expanded="false" aria-controls="antennecontrols"
+                            data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
+                            <i class="fas fa-cogs"></i>
+                        </a>
+                        <div class="collapse" id="antennecontrols">
+                          <div class="slider-container">
+                            <input type="range" class="form-range"
+                                    min="0" max="100" value="100" id="antenneslider">
+                            <label class="">Trasparenza: <span id="OUTPUTantenne"></span> %</label>
+                          </div>
+                          <div class="counter-container">
+                            <div class="counter" id="">
+                              <input class="counter-object" id="antennezIndex"
+                                      type="number" name="zIndex" min="0" max="99" step="1"
+                                      placeholder="0"
+                                      value="0">
+                            </div>
+                            <label class="">z-Index</label>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="control-box">
+                    <div class="custom-control custom-switch">
+                        <input type="checkbox" class="custom-control-input" name="switch-basemap" id="reteTelefonica">
+                        <label class="custom-control-label" for="reteTelefonica">Rete Telefonica</label>
+                    </div>
+                    <div class="text-end">
+                        <a class="item-legend" data-bs-toggle="collapse" href="#reteTelefonicalegend"
+                            role="button" aria-expanded="false" aria-controls="reteTelefonicalegend"
+                            data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
+                            <i class="fas fa-book"></i>
+                        </a>
+                        <div class="collapse" id="reteTelefonicalegend">
+                          <div id="legendreteTelefonica"></div>
+                        </div>
+                    </div>
+                    <div class="text-end">
+                        <a class="item-controls" data-bs-toggle="collapse" href="#reteTelefonicacontrols"
+                            role="button" aria-expanded="false" aria-controls="reteTelefonicacontrols"
+                            data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
+                            <i class="fas fa-cogs"></i>
+                        </a>
+                        <div class="collapse" id="reteTelefonicacontrols">
+                          <div class="slider-container">
+                            <input type="range" class="form-range"
+                                    min="0" max="100" value="100" id="reteTelefonicaslider">
+                            <label class="">Trasparenza: <span id="OUTPUTreteTelefonica"></span> %</label>
+                          </div>
+                          <div class="counter-container">
+                            <div class="counter" id="">
+                              <input class="counter-object" id="reteTelefonicazIndex"
+                                      type="number" name="zIndex" min="0" max="99" step="1"
+                                      placeholder="0"
+                                      value="0">
+                            </div>
+                            <label class="">z-Index</label>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="control-box">
+                    <div class="custom-control custom-switch">
+                        <input type="checkbox" class="custom-control-input" name="switch-basemap" id="collettoreFognario">
+                        <label class="custom-control-label" for="collettoreFognario">Collettore fognario</label>
+                    </div>
+                    <div class="text-end">
+                        <a class="item-legend" data-bs-toggle="collapse" href="#collettoreFognariolegend"
+                            role="button" aria-expanded="false" aria-controls="collettoreFognariolegend"
+                            data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
+                            <i class="fas fa-book"></i>
+                        </a>
+                        <div class="collapse" id="collettoreFognariolegend">
+                          <div id="legendcollettoreFognario"></div>
+                        </div>
+                    </div>
+                    <div class="text-end">
+                        <a class="item-controls" data-bs-toggle="collapse" href="#collettoreFognariocontrols"
+                            role="button" aria-expanded="false" aria-controls="collettoreFognariocontrols"
+                            data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
+                            <i class="fas fa-cogs"></i>
+                        </a>
+                        <div class="collapse" id="collettoreFognariocontrols">
+                          <div class="slider-container">
+                            <input type="range" class="form-range"
+                                    min="0" max="100" value="100" id="collettoreFognarioslider">
+                            <label class="">Trasparenza: <span id="OUTPUTcollettoreFognario"></span> %</label>
+                          </div>
+                          <div class="counter-container">
+                            <div class="counter" id="">
+                              <input class="counter-object" id="collettoreFognariozIndex"
+                                      type="number" name="zIndex" min="0" max="99" step="1"
+                                      placeholder="0"
+                                      value="0">
+                            </div>
+                            <label class="">z-Index</label>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="control-box">
+                    <div class="custom-control custom-switch">
+                        <input type="checkbox" class="custom-control-input" name="switch-basemap" id="depuratore">
+                        <label class="custom-control-label" for="depuratore">Depuratore</label>
+                    </div>
+                    <div class="text-end">
+                        <a class="item-legend" data-bs-toggle="collapse" href="#depuratorelegend"
+                            role="button" aria-expanded="false" aria-controls="depuratorelegend"
+                            data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
+                            <i class="fas fa-book"></i>
+                        </a>
+                        <div class="collapse" id="depuratorelegend">
+                          <div id="legenddepuratore"></div>
+                        </div>
+                    </div>
+                    <div class="text-end">
+                        <a class="item-controls" data-bs-toggle="collapse" href="#depuratorecontrols"
+                            role="button" aria-expanded="false" aria-controls="depuratorecontrols"
+                            data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
+                            <i class="fas fa-cogs"></i>
+                        </a>
+                        <div class="collapse" id="depuratorecontrols">
+                          <div class="slider-container">
+                            <input type="range" class="form-range"
+                                    min="0" max="100" value="100" id="depuratoreslider">
+                            <label class="">Trasparenza: <span id="OUTPUTdepuratore"></span> %</label>
+                          </div>
+                          <div class="counter-container">
+                            <div class="counter" id="">
+                              <input class="counter-object" id="depuratorezIndex"
+                                      type="number" name="zIndex" min="0" max="99" step="1"
+                                      placeholder="0"
+                                      value="0">
+                            </div>
+                            <label class="">z-Index</label>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="control-box">
+                    <div class="custom-control custom-switch">
+                        <input type="checkbox" class="custom-control-input" name="switch-basemap" id="elettrodottoLocale">
+                        <label class="custom-control-label" for="elettrodottoLocale">Elettrodotto Locale</label>
+                    </div>
+                    <div class="text-end">
+                        <a class="item-legend" data-bs-toggle="collapse" href="#elettrodottoLocalelegend"
+                            role="button" aria-expanded="false" aria-controls="elettrodottoLocalelegend"
+                            data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
+                            <i class="fas fa-book"></i>
+                        </a>
+                        <div class="collapse" id="elettrodottoLocalelegend">
+                          <div id="legendelettrodottoLocale"></div>
+                        </div>
+                    </div>
+                    <div class="text-end">
+                        <a class="item-controls" data-bs-toggle="collapse" href="#elettrodottoLocalecontrols"
+                            role="button" aria-expanded="false" aria-controls="elettrodottoLocalecontrols"
+                            data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
+                            <i class="fas fa-cogs"></i>
+                        </a>
+                        <div class="collapse" id="elettrodottoLocalecontrols">
+                          <div class="slider-container">
+                            <input type="range" class="form-range"
+                                    min="0" max="100" value="100" id="elettrodottoLocaleslider">
+                            <label class="">Trasparenza: <span id="OUTPUTelettrodottoLocale"></span> %</label>
+                          </div>
+                          <div class="counter-container">
+                            <div class="counter" id="">
+                              <input class="counter-object" id="elettrodottoLocalezIndex"
+                                      type="number" name="zIndex" min="0" max="99" step="1"
+                                      placeholder="0"
+                                      value="0">
+                            </div>
+                            <label class="">z-Index</label>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="control-box">
+                    <div class="custom-control custom-switch">
+                        <input type="checkbox" class="custom-control-input" name="switch-basemap" id="retePubblicaIlluminazione">
+                        <label class="custom-control-label" for="retePubblicaIlluminazione">Rete Pubblica Illuminazione</label>
+                    </div>
+                    <div class="text-end">
+                        <a class="item-legend" data-bs-toggle="collapse" href="#retePubblicaIlluminazionelegend"
+                            role="button" aria-expanded="false" aria-controls="retePubblicaIlluminazionelegend"
+                            data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
+                            <i class="fas fa-book"></i>
+                        </a>
+                        <div class="collapse" id="retePubblicaIlluminazionelegend">
+                          <div id="legendretePubblicaIlluminazione"></div>
+                        </div>
+                    </div>
+                    <div class="text-end">
+                        <a class="item-controls" data-bs-toggle="collapse" href="#retePubblicaIlluminazionecontrols"
+                            role="button" aria-expanded="false" aria-controls="retePubblicaIlluminazionecontrols"
+                            data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
+                            <i class="fas fa-cogs"></i>
+                        </a>
+                        <div class="collapse" id="retePubblicaIlluminazionecontrols">
+                          <div class="slider-container">
+                            <input type="range" class="form-range"
+                                    min="0" max="100" value="100" id="retePubblicaIlluminazioneslider">
+                            <label class="">Trasparenza: <span id="OUTPUTretePubblicaIlluminazione"></span> %</label>
+                          </div>
+                          <div class="counter-container">
+                            <div class="counter" id="">
+                              <input class="counter-object" id="retePubblicaIlluminazionezIndex"
+                                      type="number" name="zIndex" min="0" max="99" step="1"
+                                      placeholder="0"
+                                      value="0">
+                            </div>
+                            <label class="">z-Index</label>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="control-box">
+                    <div class="custom-control custom-switch">
+                        <input type="checkbox" class="custom-control-input" name="switch-basemap" id="edificiPubbliciCensiti">
+                        <label class="custom-control-label" for="edificiPubbliciCensiti">Edifici Pubblici Censiti ai fini della stima di producibilità da fotovoltaico</label>
+                    </div>
+                    <div class="text-end">
+                        <a class="item-legend" data-bs-toggle="collapse" href="#edificiPubbliciCensitilegend"
+                            role="button" aria-expanded="false" aria-controls="edificiPubbliciCensitilegend"
+                            data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
+                            <i class="fas fa-book"></i>
+                        </a>
+                        <div class="collapse" id="edificiPubbliciCensitilegend">
+                          <div id="legendedificiPubbliciCensiti"></div>
+                        </div>
+                    </div>
+                    <div class="text-end">
+                        <a class="item-controls" data-bs-toggle="collapse" href="#edificiPubbliciCensiticontrols"
+                            role="button" aria-expanded="false" aria-controls="edificiPubbliciCensiticontrols"
+                            data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
+                            <i class="fas fa-cogs"></i>
+                        </a>
+                        <div class="collapse" id="edificiPubbliciCensiticontrols">
+                          <div class="slider-container">
+                            <input type="range" class="form-range"
+                                    min="0" max="100" value="100" id="edificiPubbliciCensitislider">
+                            <label class="">Trasparenza: <span id="OUTPUTedificiPubbliciCensiti"></span> %</label>
+                          </div>
+                          <div class="counter-container">
+                            <div class="counter" id="">
+                              <input class="counter-object" id="edificiPubbliciCensitizIndex"
+                                      type="number" name="zIndex" min="0" max="99" step="1"
+                                      placeholder="0"
+                                      value="0">
+                            </div>
+                            <label class="">z-Index</label>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="control-box">
+                    <div class="custom-control custom-switch">
+                        <input type="checkbox" class="custom-control-input" name="switch-basemap" id="dividenteDemaniale">
+                        <label class="custom-control-label" for="dividenteDemaniale">Dividente Demaniale</label>
+                    </div>
+                    <div class="text-end">
+                        <a class="item-legend" data-bs-toggle="collapse" href="#dividenteDemanialelegend"
+                            role="button" aria-expanded="false" aria-controls="dividenteDemanialelegend"
+                            data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
+                            <i class="fas fa-book"></i>
+                        </a>
+                        <div class="collapse" id="dividenteDemanialelegend">
+                          <div id="legenddividenteDemaniale"></div>
+                        </div>
+                    </div>
+                    <div class="text-end">
+                        <a class="item-controls" data-bs-toggle="collapse" href="#dividenteDemanialecontrols"
+                            role="button" aria-expanded="false" aria-controls="dividenteDemanialecontrols"
+                            data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
+                            <i class="fas fa-cogs"></i>
+                        </a>
+                        <div class="collapse" id="dividenteDemanialecontrols">
+                          <div class="slider-container">
+                            <input type="range" class="form-range"
+                                    min="0" max="100" value="100" id="dividenteDemanialeslider">
+                            <label class="">Trasparenza: <span id="OUTPUTdividenteDemaniale"></span> %</label>
+                          </div>
+                          <div class="counter-container">
+                            <div class="counter" id="">
+                              <input class="counter-object" id="dividenteDemanialezIndex"
+                                      type="number" name="zIndex" min="0" max="99" step="1"
+                                      placeholder="0"
+                                      value="0">
+                            </div>
+                            <label class="">z-Index</label>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="control-box">
+                    <div class="custom-control custom-switch">
+                        <input type="checkbox" class="custom-control-input" name="switch-basemap" id="proprietaPubbliche">
+                        <label class="custom-control-label" for="proprietaPubbliche">Proprietà Pubbliche</label>
+                    </div>
+                    <div class="text-end">
+                        <a class="item-legend" data-bs-toggle="collapse" href="#proprietaPubblichelegend"
+                            role="button" aria-expanded="false" aria-controls="proprietaPubblichelegend"
+                            data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
+                            <i class="fas fa-book"></i>
+                        </a>
+                        <div class="collapse" id="proprietaPubblichelegend">
+                          <div id="legendproprietaPubbliche"></div>
+                        </div>
+                    </div>
+                    <div class="text-end">
+                        <a class="item-controls" data-bs-toggle="collapse" href="#proprietaPubblichecontrols"
+                            role="button" aria-expanded="false" aria-controls="proprietaPubblichecontrols"
+                            data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
+                            <i class="fas fa-cogs"></i>
+                        </a>
+                        <div class="collapse" id="proprietaPubblichecontrols">
+                          <div class="slider-container">
+                            <input type="range" class="form-range"
+                                    min="0" max="100" value="100" id="proprietaPubblicheslider">
+                            <label class="">Trasparenza: <span id="OUTPUTproprietaPubbliche"></span> %</label>
+                          </div>
+                          <div class="counter-container">
+                            <div class="counter" id="">
+                              <input class="counter-object" id="proprietaPubblichezIndex"
+                                      type="number" name="zIndex" min="0" max="99" step="1"
+                                      placeholder="0"
+                                      value="0">
+                            </div>
+                            <label class="">z-Index</label>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="control-box">
+                    <div class="custom-control custom-switch">
+                        <input type="checkbox" class="custom-control-input" name="switch-basemap" id="dsmLidar">
+                        <label class="custom-control-label" for="dsmLidar">DSM LiDAR 1m</label>
+                    </div>
+                    <div class="text-end">
+                        <a class="item-legend" data-bs-toggle="collapse" href="#dsmLidarlegend"
+                            role="button" aria-expanded="false" aria-controls="dsmLidarlegend"
+                            data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
+                            <i class="fas fa-book"></i>
+                        </a>
+                        <div class="collapse" id="dsmLidarlegend">
+                          <div id="legenddsmLidar"></div>
+                        </div>
+                    </div>
+                    <div class="text-end">
+                        <a class="item-controls" data-bs-toggle="collapse" href="#dsmLidarcontrols"
+                            role="button" aria-expanded="false" aria-controls="dsmLidarcontrols"
+                            data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
+                            <i class="fas fa-cogs"></i>
+                        </a>
+                        <div class="collapse" id="dsmLidarcontrols">
+                          <div class="slider-container">
+                            <input type="range" class="form-range"
+                                    min="0" max="100" value="100" id="dsmLidarslider">
+                            <label class="">Trasparenza: <span id="OUTPUTdsmLidar"></span> %</label>
+                          </div>
+                          <div class="counter-container">
+                            <div class="counter" id="">
+                              <input class="counter-object" id="dsmLidarzIndex"
+                                      type="number" name="zIndex" min="0" max="99" step="1"
+                                      placeholder="0"
+                                      value="0">
+                            </div>
+                            <label class="">z-Index</label>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="control-box">
+                    <div class="custom-control custom-switch">
+                        <input type="checkbox" class="custom-control-input" name="switch-basemap" id="dtmLidar">
+                        <label class="custom-control-label" for="dtmLidar">DTM LiDAR 1m</label>
+                    </div>
+                    <div class="text-end">
+                        <a class="item-legend" data-bs-toggle="collapse" href="#dtmLidarlegend"
+                            role="button" aria-expanded="false" aria-controls="dtmLidarlegend"
+                            data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
+                            <i class="fas fa-book"></i>
+                        </a>
+                        <div class="collapse" id="dtmLidarlegend">
+                          <div id="legenddtmLidar"></div>
+                        </div>
+                    </div>
+                    <div class="text-end">
+                        <a class="item-controls" data-bs-toggle="collapse" href="#dtmLidarcontrols"
+                            role="button" aria-expanded="false" aria-controls="dtmLidarcontrols"
+                            data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
+                            <i class="fas fa-cogs"></i>
+                        </a>
+                        <div class="collapse" id="dtmLidarcontrols">
+                          <div class="slider-container">
+                            <input type="range" class="form-range"
+                                    min="0" max="100" value="100" id="dtmLidarslider">
+                            <label class="">Trasparenza: <span id="OUTPUTdtmLidar"></span> %</label>
+                          </div>
+                          <div class="counter-container">
+                            <div class="counter" id="">
+                              <input class="counter-object" id="dtmLidarzIndex"
+                                      type="number" name="zIndex" min="0" max="99" step="1"
+                                      placeholder="0"
+                                      value="0">
+                            </div>
+                            <label class="">z-Index</label>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<script type="text/javascript">
+
+    var map = new ol.Map({
+        target: 'map',
+        controls: ol.control.defaults({
+            attribution: false
+        }),
+    });
+    var scaleLine = new ol.control.ScaleLine({
+        className: 'ol-scale-line',
+        target: document.getElementById('scale-line')
+    });
+    map.addControl(scaleLine);
+    var attribution = new ol.control.Attribution({
+        className: 'ol-attribution',
+        label: 'a',
+        collapsible: true,
+        collapsed: true,
+        target: document.getElementById('map-attribution'),
+    });
+    map.addControl(attribution);
+    var view = new ol.View({
+        center: ol.proj.fromLonLat([14.483733304611981, 40.69930245824812]),
+        zoom: 14,
+        maxZoom: 20,
+        minZoom: 12
+    });
+    map.setView(view);
+
+    var osm = new ol.layer.Tile({
+        source: new ol.source.OSM(),
+        zIndex: 0
+    });
+    map.addLayer(osm);
+    $('#BASEMAP_OSM').on('change', function() {
+        let isChecked = $(this).is(':checked');
+        if (isChecked) {
+            map.addLayer(osm);
+            map.removeLayer(outdoors);
+            map.removeLayer(monocromeGray);
+            map.removeLayer(satellite);
+        } else {
+            map.removeLayer(osm);
+        }
+    });
+    var mapAttribution = '<a href="https://massimilianomoraca.it/" target="_blank">Massimiliano Moraca</a> has created this map using <a href="https://openlayers.org/" target="_blank">OpenLayers</a>'
+    var userMapBox = 'maxdragonheart'
+    var tokenMapBox = 'pk.eyJ1IjoibWF4ZHJhZ29uaGVhcnQiLCJhIjoiY2p4a2k3a2twMmF2aDN4czhwMzBoZ2x1eCJ9.upAxT3LK0NCiP_jBcErzNw'
+    var outdoors = new ol.layer.Tile({
+        title: 'Topographic',
+        source: new ol.source.XYZ({
+        attributions: mapAttribution,
+            url: 'https://api.mapbox.com/styles/v1/' + userMapBox + '/'
+                + 'cjxkimp5j5s0o1ct4b68n4x1p/tiles/256/{z}/{x}/{y}?'
+                + 'access_token=' + tokenMapBox + ''
+            }),
+        zIndex: 0,
+    });
+    $('#BASEMAP_OUTDOORS').on('change', function() {
+        let isChecked = $(this).is(':checked');
+        if (isChecked) {
+            map.addLayer(outdoors);
+            map.removeLayer(osm);
+            map.removeLayer(monocromeGray);
+            map.removeLayer(satellite);
+        } else {
+            map.removeLayer(outdoors);
+        }
+    });
+    var monocromeGray = new ol.layer.Tile({
+        title: 'MonocromeGray',
+        source: new ol.source.XYZ({
+            attributions: mapAttribution,
+            url: 'https://api.mapbox.com/styles/v1/' + userMapBox + '/'
+                + 'ckcqb7nu809mu1inv9lfuj2ut/tiles/256/{z}/{x}/{y}?'
+                + 'access_token=' + tokenMapBox + ''
+        }),
+        zIndex: 0,
+    });
+    $('#BASEMAP_MONOCROMEGRAY').on('change', function() {
+        let isChecked = $(this).is(':checked');
+        if (isChecked) {
+            map.addLayer(monocromeGray);
+            map.removeLayer(osm);
+            map.removeLayer(outdoors);
+            map.removeLayer(satellite);
+        } else {
+            map.removeLayer(monocromeGray);
+        }
+    });
+    var satellite = new ol.layer.Tile({
+        title: 'Satellite',
+        source: new ol.source.XYZ({
+            attributions: mapAttribution,
+            url: 'https://api.mapbox.com/styles/v1/' + userMapBox + '/'
+                + 'ck0l7j9cx27df1clhcyok70mk/tiles/256/{z}/{x}/{y}?'
+                + 'access_token=' + tokenMapBox + ''
+        }),
+        zIndex: 0,
+    });
+    $('#BASEMAP_SATELLITE').on('change', function() {
+    let isChecked = $(this).is(':checked');
+        if (isChecked) {
+            map.addLayer(satellite);
+            map.removeLayer(osm);
+            map.removeLayer(outdoors);
+            map.removeLayer(monocromeGray);
+        } else {
+            map.removeLayer(satellite);
+        }
+    });
+
+    var mainUrl = 'http://0.0.0.0:8300/geoserver/'
+    var workspace = 'CastellammarediStabia'
+    var wmsSource = mainUrl + workspace +'/wms'
+
+    var confineComunale = new ol.layer.Tile({
+        source: new ol.source.TileWMS({
+        url: wmsSource,
+        params: {
+            'LAYERS': 'confine_comunale',
+            //'STYLES': null,
+        }
+        }),
+        minZoom: 0,
+        maxZoom: 28,
+        zIndex: 99,
+        opacity: 1.00
+    });
+    map.addLayer(confineComunale);
+
+    var antenne = new ol.layer.Tile({
+        source: new ol.source.TileWMS({
+        url: wmsSource,
+        params: {
+            'LAYERS': 'antenne',
+            //'STYLES': null,
+        }
+        }),
+        minZoom: 0,
+        maxZoom: 28,
+        zIndex: 1,
+        opacity: 1.00
+    });
+    $('#antenne').on('change', function() {
+        let isChecked = $(this).is(':checked');
+        if (isChecked) {
+            map.addLayer(antenne);
+            getElementLegendImg('legendantenne', antenne, wmsSource, 'antenne');
+            layerOpacity(antenne, 'antenneslider', 'OUTPUTantenne');
+            layerZIndex(antenne, 'antennezIndex', 'OUTPUTantenne');
+        } else {
+            map.removeLayer(antenne);
+        }
+    });
+
+    var reteTelefonica = new ol.layer.Tile({
+        source: new ol.source.TileWMS({
+        url: wmsSource,
+        params: {
+            'LAYERS': 'rete_telefonica',
+            //'STYLES': 'CLC2018',
+        }
+        }),
+        minZoom: 0,
+        maxZoom: 28,
+        zIndex: 1,
+        opacity: 1.00
+    });
+    $('#reteTelefonica').on('change', function() {
+        let isChecked = $(this).is(':checked');
+        if (isChecked) {
+            map.addLayer(reteTelefonica);
+            getElementLegendImg('legendreteTelefonica', reteTelefonica, wmsSource, 'rete_telefonica');
+            layerOpacity(reteTelefonica, 'reteTelefonicaslider', 'OUTPUTreteTelefonica');
+            layerZIndex(reteTelefonica, 'reteTelefonicazIndex', 'OUTPUTreteTelefonica');
+        } else {
+            map.removeLayer(reteTelefonica);
+        }
+    });
+
+    var collettoreFognario = new ol.layer.Tile({
+        source: new ol.source.TileWMS({
+        url: wmsSource,
+        params: {
+            'LAYERS': 'collettore_fognario',
+            //'STYLES': 'CLC2018',
+        }
+        }),
+        minZoom: 0,
+        maxZoom: 28,
+        zIndex: 1,
+        opacity: 1.00
+    });
+    $('#collettoreFognario').on('change', function() {
+        let isChecked = $(this).is(':checked');
+        if (isChecked) {
+            map.addLayer(collettoreFognario);
+            getElementLegendImg('legendcollettoreFognario', collettoreFognario, wmsSource, 'collettore_fognario');
+            layerOpacity(collettoreFognario, 'collettoreFognarioslider', 'OUTPUTcollettoreFognario');
+            layerZIndex(collettoreFognario, 'collettoreFognariozIndex', 'OUTPUTcollettoreFognario');
+        } else {
+            map.removeLayer(collettoreFognario);
+        }
+    });
+
+    var depuratore = new ol.layer.Tile({
+        source: new ol.source.TileWMS({
+        url: wmsSource,
+        params: {
+            'LAYERS': 'depuratore',
+            //'STYLES': 'CLC2018',
+        }
+        }),
+        minZoom: 0,
+        maxZoom: 28,
+        zIndex: 1,
+        opacity: 1.00
+    });
+    $('#depuratore').on('change', function() {
+        let isChecked = $(this).is(':checked');
+        if (isChecked) {
+            map.addLayer(depuratore);
+            getElementLegendImg('legenddepuratore', depuratore, wmsSource, 'depuratore');
+            layerOpacity(depuratore, 'depuratoreslider', 'OUTPUTdepuratore');
+            layerZIndex(depuratore, 'depuratorezIndex', 'OUTPUTdepuratore');
+        } else {
+            map.removeLayer(depuratore);
+        }
+    });
+
+    var elettrodottoLocale = new ol.layer.Tile({
+        source: new ol.source.TileWMS({
+        url: wmsSource,
+        params: {
+            'LAYERS': 'elettrodotto_locale',
+            //'STYLES': 'CLC2018',
+        }
+        }),
+        minZoom: 0,
+        maxZoom: 28,
+        zIndex: 1,
+        opacity: 1.00
+    });
+    $('#elettrodottoLocale').on('change', function() {
+        let isChecked = $(this).is(':checked');
+        if (isChecked) {
+            map.addLayer(elettrodottoLocale);
+            getElementLegendImg('legendelettrodottoLocale', elettrodottoLocale, wmsSource, 'elettrodotto_locale');
+            layerOpacity(elettrodottoLocale, 'elettrodottoLocaleslider', 'OUTPUTelettrodottoLocale');
+            layerZIndex(elettrodottoLocale, 'elettrodottoLocalezIndex', 'OUTPUTelettrodottoLocale');
+        } else {
+            map.removeLayer(elettrodottoLocale);
+        }
+    });
+
+    var retePubblicaIlluminazione = new ol.layer.Tile({
+        source: new ol.source.TileWMS({
+        url: wmsSource,
+        params: {
+            'LAYERS': 'rete_pubblica_illuminazione',
+            //'STYLES': 'CLC2018',
+        }
+        }),
+        minZoom: 0,
+        maxZoom: 28,
+        zIndex: 1,
+        opacity: 1.00
+    });
+    $('#retePubblicaIlluminazione').on('change', function() {
+        let isChecked = $(this).is(':checked');
+        if (isChecked) {
+            map.addLayer(retePubblicaIlluminazione);
+            getElementLegendImg('legendretePubblicaIlluminazione', retePubblicaIlluminazione, wmsSource, 'rete_pubblica_illuminazione');
+            layerOpacity(retePubblicaIlluminazione, 'retePubblicaIlluminazioneslider', 'OUTPUTretePubblicaIlluminazione');
+            layerZIndex(retePubblicaIlluminazione, 'retePubblicaIlluminazionezIndex', 'OUTPUTretePubblicaIlluminazione');
+        } else {
+            map.removeLayer(retePubblicaIlluminazione);
+        }
+    });
+
+    var edificiPubbliciCensiti = new ol.layer.Tile({
+        source: new ol.source.TileWMS({
+        url: wmsSource,
+        params: {
+            'LAYERS': 'edifici_pubblici_censiti',
+            //'STYLES': 'CLC2018',
+        }
+        }),
+        minZoom: 0,
+        maxZoom: 28,
+        zIndex: 1,
+        opacity: 1.00
+    });
+    $('#edificiPubbliciCensiti').on('change', function() {
+        let isChecked = $(this).is(':checked');
+        if (isChecked) {
+            map.addLayer(edificiPubbliciCensiti);
+            getElementLegendImg('legendedificiPubbliciCensiti', edificiPubbliciCensiti, wmsSource, 'edifici_pubblici_censiti');
+            layerOpacity(edificiPubbliciCensiti, 'edificiPubbliciCensitislider', 'OUTPUTedificiPubbliciCensiti');
+            layerZIndex(edificiPubbliciCensiti, 'edificiPubbliciCensitizIndex', 'OUTPUTedificiPubbliciCensiti');
+        } else {
+            map.removeLayer(edificiPubbliciCensiti);
+        }
+    });
+
+    var dividenteDemaniale = new ol.layer.Tile({
+        source: new ol.source.TileWMS({
+        url: wmsSource,
+        params: {
+            'LAYERS': 'dividente_demaniale',
+            //'STYLES': 'CLC2018',
+        }
+        }),
+        minZoom: 0,
+        maxZoom: 28,
+        zIndex: 1,
+        opacity: 1.00
+    });
+    $('#dividenteDemaniale').on('change', function() {
+        let isChecked = $(this).is(':checked');
+        if (isChecked) {
+            map.addLayer(dividenteDemaniale);
+            getElementLegendImg('legenddividenteDemaniale', dividenteDemaniale, wmsSource, 'dividente_demaniale');
+            layerOpacity(dividenteDemaniale, 'dividenteDemanialeslider', 'OUTPUTdividenteDemaniale');
+            layerZIndex(dividenteDemaniale, 'dividenteDemanialezIndex', 'OUTPUTdividenteDemaniale');
+        } else {
+            map.removeLayer(dividenteDemaniale);
+        }
+    });
+
+    var proprietaPubbliche = new ol.layer.Tile({
+        source: new ol.source.TileWMS({
+        url: wmsSource,
+        params: {
+            'LAYERS': 'proprieta_pubbliche',
+            //'STYLES': 'CLC2018',
+        }
+        }),
+        minZoom: 0,
+        maxZoom: 28,
+        zIndex: 1,
+        opacity: 1.00
+    });
+    $('#proprietaPubbliche').on('change', function() {
+        let isChecked = $(this).is(':checked');
+        if (isChecked) {
+            map.addLayer(proprietaPubbliche);
+            getElementLegendImg('legendproprietaPubbliche', proprietaPubbliche, wmsSource, 'proprieta_pubbliche');
+            layerOpacity(proprietaPubbliche, 'proprietaPubblicheslider', 'OUTPUTproprietaPubbliche');
+            layerZIndex(proprietaPubbliche, 'proprietaPubblichezIndex', 'OUTPUTproprietaPubbliche');
+        } else {
+            map.removeLayer(proprietaPubbliche);
+        }
+    });
+
+    var dsmLidar = new ol.layer.Tile({
+        source: new ol.source.TileWMS({
+        url: wmsSource,
+        params: {
+            'LAYERS': 'dsm_lidar_1m',
+            //'STYLES': 'CLC2018',
+        }
+        }),
+        minZoom: 0,
+        maxZoom: 28,
+        zIndex: 1,
+        opacity: 1.00
+    });
+    $('#dsmLidar').on('change', function() {
+        let isChecked = $(this).is(':checked');
+        if (isChecked) {
+            map.addLayer(dsmLidar);
+            getElementLegendImg('legenddsmLidar', dsmLidar, wmsSource, 'dsm_lidar_1m');
+            layerOpacity(dsmLidar, 'dsmLidarslider', 'OUTPUTdsmLidar');
+            layerZIndex(dsmLidar, 'dsmLidarzIndex', 'OUTPUTdsmLidar');
+        } else {
+            map.removeLayer(dsmLidar);
+        }
+    });
+
+    var dtmLidar = new ol.layer.Tile({
+        source: new ol.source.TileWMS({
+        url: wmsSource,
+        params: {
+            'LAYERS': 'dtm_lidar_1m',
+            //'STYLES': 'CLC2018',
+        }
+        }),
+        minZoom: 0,
+        maxZoom: 28,
+        zIndex: 1,
+        opacity: 1.00
+    });
+    $('#dtmLidar').on('change', function() {
+        let isChecked = $(this).is(':checked');
+        if (isChecked) {
+            map.addLayer(dtmLidar);
+            getElementLegendImg('legenddtmLidar', dtmLidar, wmsSource, 'dtm_lidar_1m');
+            layerOpacity(dtmLidar, 'dtmLidarslider', 'OUTPUTdtmLidar');
+            layerZIndex(dtmLidar, 'dtmLidarzIndex', 'OUTPUTdtmLidar');
+        } else {
+            map.removeLayer(dtmLidar);
+        }
+    });
+
+</script>
+
+</body>
+</html>

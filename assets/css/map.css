@@ -1,0 +1,38 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+}
+.map-wrapper, .map {
+  width: 100%;
+}
+.map-wrapper, .map {
+  height: 100vh;
+}
+.map-info, .btn-map-legend, .ol-attribution div {
+  position: absolute;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: -5px 5px 8px 4px rgba(0, 0, 0, 0.2);
+}
+.btn-map-legend {
+  position: absolute;
+  right: 0.5vw;
+  box-shadow: -5px -5px 8px 4px rgba(0, 0, 0, 0.2);
+}
+.btn-map-legend {
+  bottom: 0.5vh;
+}
+.btn-map {
+  background-color: rgba(5, 102, 141, 1);
+  color: rgba(2, 195, 154, 1);
+}
+.btn-map:hover {
+  background-color: rgba(2, 195, 154, 1);
+  color: rgba(5, 102, 141, 1);
+}
+.dropdown-menu-legend {
+  width: 15vw !important;
+  height: 37.5vh !important;
+}
