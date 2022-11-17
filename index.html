@@ -98,7 +98,9 @@
                 </h2>
                 <div id="collapsePuc" class="accordion-collapse collapse" aria-labelledby="puc" data-bs-parent="#accordionExample">
                   <div class="accordion-body">
+
                     <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+
                   </div>
                 </div>
               </div>
@@ -353,6 +355,46 @@
                               <div class="counter-container">
                                 <div class="counter" id="">
                                   <input class="counter-object" id="art142_mzIndex"
+                                          type="number" name="zIndex" min="0" max="99" step="1"
+                                          placeholder="0"
+                                          value="0">
+                                </div>
+                                <label class="">z-Index</label>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="control-box">
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" name="switch-basemap" id="cave_prae">
+                            <label class="custom-control-label" for="cave_prae">CMN - Cave PRAE</label>
+                        </div>
+                        <div class="text-end">
+                            <a class="item-legend" data-bs-toggle="collapse" href="#cave_praelegend"
+                                role="button" aria-expanded="false" aria-controls="cave_praelegend"
+                                data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
+                                <i class="fas fa-book"></i>
+                            </a>
+                            <div class="collapse" id="cave_praelegend">
+                              <div id="legendcave_prae"></div>
+                            </div>
+                        </div>
+                        <div class="text-end">
+                            <a class="item-controls" data-bs-toggle="collapse" href="#cave_praecontrols"
+                                role="button" aria-expanded="false" aria-controls="cave_praecontrols"
+                                data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
+                                <i class="fas fa-cogs"></i>
+                            </a>
+                            <div class="collapse" id="cave_praecontrols">
+                              <div class="slider-container">
+                                <input type="range" class="form-range"
+                                        min="0" max="100" value="100" id="cave_praeslider">
+                                <label class="">Trasparenza: <span id="OUTPUTcave_prae"></span> %</label>
+                              </div>
+                              <div class="counter-container">
+                                <div class="counter" id="">
+                                  <input class="counter-object" id="cave_praezIndex"
                                           type="number" name="zIndex" min="0" max="99" step="1"
                                           placeholder="0"
                                           value="0">
@@ -736,6 +778,86 @@
                         </div>
                     </div>
 
+                    <div class="control-box">
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" name="switch-basemap" id="asi">
+                            <label class="custom-control-label" for="asi">CMN - ASI</label>
+                        </div>
+                        <div class="text-end">
+                            <a class="item-legend" data-bs-toggle="collapse" href="#asilegend"
+                                role="button" aria-expanded="false" aria-controls="asilegend"
+                                data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
+                                <i class="fas fa-book"></i>
+                            </a>
+                            <div class="collapse" id="asilegend">
+                              <div id="legendasi"></div>
+                            </div>
+                        </div>
+                        <div class="text-end">
+                            <a class="item-controls" data-bs-toggle="collapse" href="#asicontrols"
+                                role="button" aria-expanded="false" aria-controls="asicontrols"
+                                data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
+                                <i class="fas fa-cogs"></i>
+                            </a>
+                            <div class="collapse" id="asicontrols">
+                              <div class="slider-container">
+                                <input type="range" class="form-range"
+                                        min="0" max="100" value="100" id="asislider">
+                                <label class="">Trasparenza: <span id="OUTPUTasi"></span> %</label>
+                              </div>
+                              <div class="counter-container">
+                                <div class="counter" id="">
+                                  <input class="counter-object" id="asizIndex"
+                                          type="number" name="zIndex" min="0" max="99" step="1"
+                                          placeholder="0"
+                                          value="0">
+                                </div>
+                                <label class="">z-Index</label>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="control-box">
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" name="switch-basemap" id="asi_varianti">
+                            <label class="custom-control-label" for="asi_varianti">CMN - Varianti ASI</label>
+                        </div>
+                        <div class="text-end">
+                            <a class="item-legend" data-bs-toggle="collapse" href="#asi_variantilegend"
+                                role="button" aria-expanded="false" aria-controls="asi_variantilegend"
+                                data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
+                                <i class="fas fa-book"></i>
+                            </a>
+                            <div class="collapse" id="asi_variantilegend">
+                              <div id="legendasi_varianti"></div>
+                            </div>
+                        </div>
+                        <div class="text-end">
+                            <a class="item-controls" data-bs-toggle="collapse" href="#asi_varianticontrols"
+                                role="button" aria-expanded="false" aria-controls="asi_varianticontrols"
+                                data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
+                                <i class="fas fa-cogs"></i>
+                            </a>
+                            <div class="collapse" id="asi_varianticontrols">
+                              <div class="slider-container">
+                                <input type="range" class="form-range"
+                                        min="0" max="100" value="100" id="asi_variantislider">
+                                <label class="">Trasparenza: <span id="OUTPUTasi_varianti"></span> %</label>
+                              </div>
+                              <div class="counter-container">
+                                <div class="counter" id="">
+                                  <input class="counter-object" id="asi_variantizIndex"
+                                          type="number" name="zIndex" min="0" max="99" step="1"
+                                          placeholder="0"
+                                          value="0">
+                                </div>
+                                <label class="">z-Index</label>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+
                   </div>
                 </div>
               </div>
@@ -841,7 +963,62 @@
                 </h2>
                 <div id="collapseStoria" class="accordion-collapse collapse" aria-labelledby="storia" data-bs-parent="#accordionExample">
                   <div class="accordion-body">
+
                     <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="istruzione">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseistruzione" aria-expanded="false" aria-controls="collapseistruzione">
+                    Istruzione
+                  </button>
+                </h2>
+                <div id="collapseistruzione" class="accordion-collapse collapse" aria-labelledby="istruzione" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+
+                    <div class="control-box">
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" name="switch-basemap" id="edifici_scolastici">
+                            <label class="custom-control-label" for="edifici_scolastici">CMN - Edifici scolastici</label>
+                        </div>
+                        <div class="text-end">
+                            <a class="item-legend" data-bs-toggle="collapse" href="#edifici_scolasticilegend"
+                                role="button" aria-expanded="false" aria-controls="edifici_scolasticilegend"
+                                data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
+                                <i class="fas fa-book"></i>
+                            </a>
+                            <div class="collapse" id="edifici_scolasticilegend">
+                              <div id="legendedifici_scolastici"></div>
+                            </div>
+                        </div>
+                        <div class="text-end">
+                            <a class="item-controls" data-bs-toggle="collapse" href="#edifici_scolasticicontrols"
+                                role="button" aria-expanded="false" aria-controls="edifici_scolasticicontrols"
+                                data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
+                                <i class="fas fa-cogs"></i>
+                            </a>
+                            <div class="collapse" id="edifici_scolasticicontrols">
+                              <div class="slider-container">
+                                <input type="range" class="form-range"
+                                        min="0" max="100" value="100" id="edifici_scolasticislider">
+                                <label class="">Trasparenza: <span id="OUTPUTedifici_scolastici"></span> %</label>
+                              </div>
+                              <div class="counter-container">
+                                <div class="counter" id="">
+                                  <input class="counter-object" id="edifici_scolasticizIndex"
+                                          type="number" name="zIndex" min="0" max="99" step="1"
+                                          placeholder="0"
+                                          value="0">
+                                </div>
+                                <label class="">z-Index</label>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+
                   </div>
                 </div>
               </div>

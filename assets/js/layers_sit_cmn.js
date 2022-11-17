@@ -200,3 +200,103 @@ $('#art142_m').on('change', function() {
         map.removeLayer(art142_m);
     }
 });
+
+var asi = new ol.layer.Tile({
+    source: new ol.source.TileWMS({
+    url: wmsSource,
+    params: {
+        'LAYERS': 'asi',
+    }
+    }),
+    minZoom: 0,
+    maxZoom: 28,
+    zIndex: 1,
+    opacity: 1.00
+});
+$('#asi').on('change', function() {
+    let isChecked = $(this).is(':checked');
+    if (isChecked) {
+        map.addLayer(asi);
+        getElementLegendImg('legendasi', asi, wmsSource, 'asi');
+        layerOpacity(asi, 'asislider', 'OUTPUTasi');
+        layerZIndex(asi, 'asizIndex', 'OUTPUTasi');
+        getElementInfo("layerInfo", asi);
+    } else {
+        map.removeLayer(asi);
+    }
+});
+
+var asi_varianti = new ol.layer.Tile({
+    source: new ol.source.TileWMS({
+    url: wmsSource,
+    params: {
+        'LAYERS': 'asi_varianti',
+    }
+    }),
+    minZoom: 0,
+    maxZoom: 28,
+    zIndex: 1,
+    opacity: 1.00
+});
+$('#asi_varianti').on('change', function() {
+    let isChecked = $(this).is(':checked');
+    if (isChecked) {
+        map.addLayer(asi_varianti);
+        getElementLegendImg('legendasi_varianti', asi_varianti, wmsSource, 'asi_varianti');
+        layerOpacity(asi_varianti, 'asi_variantislider', 'OUTPUTasi_varianti');
+        layerZIndex(asi_varianti, 'asi_variantizIndex', 'OUTPUTasi_varianti');
+        getElementInfo("layerInfo", asi_varianti);
+    } else {
+        map.removeLayer(asi_varianti);
+    }
+});
+
+var cave_prae = new ol.layer.Tile({
+    source: new ol.source.TileWMS({
+    url: wmsSource,
+    params: {
+        'LAYERS': 'cave_prae',
+    }
+    }),
+    minZoom: 0,
+    maxZoom: 28,
+    zIndex: 1,
+    opacity: 1.00
+});
+$('#cave_prae').on('change', function() {
+    let isChecked = $(this).is(':checked');
+    if (isChecked) {
+        map.addLayer(cave_prae);
+        getElementLegendImg('legendcave_prae', cave_prae, wmsSource, 'cave_prae');
+        layerOpacity(cave_prae, 'cave_praeslider', 'OUTPUTcave_prae');
+        layerZIndex(cave_prae, 'cave_praezIndex', 'OUTPUTcave_prae');
+        getElementInfo("layerInfo", cave_prae);
+    } else {
+        map.removeLayer(cave_prae);
+    }
+});
+
+var edifici_scolastici = new ol.layer.Tile({
+    source: new ol.source.TileWMS({
+    url: wmsSource,
+    params: {
+        'LAYERS': 'edifici_scolastici',
+    }
+    }),
+    minZoom: 0,
+    maxZoom: 28,
+    zIndex: 1,
+    opacity: 1.00
+});
+$('#edifici_scolastici').on('change', function() {
+    let isChecked = $(this).is(':checked');
+    if (isChecked) {
+        map.addLayer(edifici_scolastici);
+        getElementLegendImg('legendedifici_scolastici', edifici_scolastici, wmsSource, 'edifici_scolastici');
+        layerOpacity(edifici_scolastici, 'edifici_scolasticislider', 'OUTPUTedifici_scolastici');
+        layerZIndex(edifici_scolastici, 'edifici_scolasticizIndex', 'OUTPUTedifici_scolastici');
+        getElementInfo("layerInfo", edifici_scolastici);
+    } else {
+        map.removeLayer(edifici_scolastici);
+    }
+});
