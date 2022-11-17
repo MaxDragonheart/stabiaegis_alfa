@@ -416,6 +416,46 @@
                         </div>
                     </div>
 
+                    <div class="control-box">
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" name="switch-basemap" id="ambitiSistemaPorti">
+                            <label class="custom-control-label" for="ambitiSistemaPorti">CMN - Ambiti Sistema Porti</label>
+                        </div>
+                        <div class="text-end">
+                            <a class="item-legend" data-bs-toggle="collapse" href="#ambitiSistemaPortilegend"
+                                role="button" aria-expanded="false" aria-controls="ambitiSistemaPortilegend"
+                                data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
+                                <i class="fas fa-book"></i>
+                            </a>
+                            <div class="collapse" id="ambitiSistemaPortilegend">
+                              <div id="legendambitiSistemaPorti"></div>
+                            </div>
+                        </div>
+                        <div class="text-end">
+                            <a class="item-controls" data-bs-toggle="collapse" href="#ambitiSistemaPorticontrols"
+                                role="button" aria-expanded="false" aria-controls="ambitiSistemaPorticontrols"
+                                data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
+                                <i class="fas fa-cogs"></i>
+                            </a>
+                            <div class="collapse" id="ambitiSistemaPorticontrols">
+                              <div class="slider-container">
+                                <input type="range" class="form-range"
+                                        min="0" max="100" value="100" id="ambitiSistemaPortislider">
+                                <label class="">Trasparenza: <span id="OUTPUTambitiSistemaPorti"></span> %</label>
+                              </div>
+                              <div class="counter-container">
+                                <div class="counter" id="">
+                                  <input class="counter-object" id="ambitiSistemaPortizIndex"
+                                          type="number" name="zIndex" min="0" max="99" step="1"
+                                          placeholder="0"
+                                          value="0">
+                                </div>
+                                <label class="">z-Index</label>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+
                   </div>
                 </div>
               </div>
@@ -770,8 +810,11 @@ let isChecked = $(this).is(':checked');
     }
 });
 </script>
+
 <script type="text/javascript"
-    src="./assets/js/layers.js"></script>
+    src="assets/js/layers_stabiae.js"></script>
+<script type="text/javascript"
+    src="assets/js/layers_sit_cmn.js"></script>
 
 </body>
 </html>
