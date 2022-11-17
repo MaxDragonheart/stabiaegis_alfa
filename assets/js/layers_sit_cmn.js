@@ -150,3 +150,28 @@ $('#zes').on('change', function() {
         map.removeLayer(zes);
     }
 });
+
+var art136 = new ol.layer.Tile({
+    source: new ol.source.TileWMS({
+    url: wmsSource,
+    params: {
+        'LAYERS': 'art136',
+    }
+    }),
+    minZoom: 0,
+    maxZoom: 28,
+    zIndex: 1,
+    opacity: 1.00
+});
+$('#art136').on('change', function() {
+    let isChecked = $(this).is(':checked');
+    if (isChecked) {
+        map.addLayer(art136);
+        getElementLegendImg('legendart136', art136, wmsSource, 'art136');
+        layerOpacity(art136, 'art136slider', 'OUTPUTart136');
+        layerZIndex(art136, 'art136zIndex', 'OUTPUTart136');
+        getElementInfo("layerInfo", art136);
+    } else {
+        map.removeLayer(art136);
+    }
+});

@@ -656,6 +656,46 @@
                         </div>
                     </div>
 
+                    <div class="control-box">
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" name="switch-basemap" id="art136">
+                            <label class="custom-control-label" for="art136">CMN - Immobili ed aree di notevole interesse pubblico</label>
+                        </div>
+                        <div class="text-end">
+                            <a class="item-legend" data-bs-toggle="collapse" href="#art136legend"
+                                role="button" aria-expanded="false" aria-controls="art136legend"
+                                data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
+                                <i class="fas fa-book"></i>
+                            </a>
+                            <div class="collapse" id="art136legend">
+                              <div id="legendart136"></div>
+                            </div>
+                        </div>
+                        <div class="text-end">
+                            <a class="item-controls" data-bs-toggle="collapse" href="#art136controls"
+                                role="button" aria-expanded="false" aria-controls="art136controls"
+                                data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
+                                <i class="fas fa-cogs"></i>
+                            </a>
+                            <div class="collapse" id="art136controls">
+                              <div class="slider-container">
+                                <input type="range" class="form-range"
+                                        min="0" max="100" value="100" id="art136slider">
+                                <label class="">Trasparenza: <span id="OUTPUTart136"></span> %</label>
+                              </div>
+                              <div class="counter-container">
+                                <div class="counter" id="">
+                                  <input class="counter-object" id="art136zIndex"
+                                          type="number" name="zIndex" min="0" max="99" step="1"
+                                          placeholder="0"
+                                          value="0">
+                                </div>
+                                <label class="">z-Index</label>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+
                   </div>
                 </div>
               </div>
