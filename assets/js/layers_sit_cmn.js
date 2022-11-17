@@ -100,3 +100,53 @@ $('#naturaliPregio').on('change', function() {
         map.removeLayer(naturaliPregio);
     }
 });
+
+var naturaliProtette = new ol.layer.Tile({
+    source: new ol.source.TileWMS({
+    url: wmsSource,
+    params: {
+        'LAYERS': 'aree_naturali_protette',
+    }
+    }),
+    minZoom: 0,
+    maxZoom: 28,
+    zIndex: 1,
+    opacity: 1.00
+});
+$('#naturaliProtette').on('change', function() {
+    let isChecked = $(this).is(':checked');
+    if (isChecked) {
+        map.addLayer(naturaliProtette);
+        getElementLegendImg('legendnaturaliProtette', naturaliProtette, wmsSource, 'naturaliProtette');
+        layerOpacity(naturaliProtette, 'naturaliProtetteslider', 'OUTPUTnaturaliProtette');
+        layerZIndex(naturaliProtette, 'naturaliProtettezIndex', 'OUTPUTnaturaliProtette');
+        getElementInfo("layerInfo", naturaliProtette);
+    } else {
+        map.removeLayer(naturaliProtette);
+    }
+});
+
+var zes = new ol.layer.Tile({
+    source: new ol.source.TileWMS({
+    url: wmsSource,
+    params: {
+        'LAYERS': 'aree_zes',
+    }
+    }),
+    minZoom: 0,
+    maxZoom: 28,
+    zIndex: 1,
+    opacity: 1.00
+});
+$('#zes').on('change', function() {
+    let isChecked = $(this).is(':checked');
+    if (isChecked) {
+        map.addLayer(zes);
+        getElementLegendImg('legendzes', zes, wmsSource, 'zes');
+        layerOpacity(zes, 'zesslider', 'OUTPUTzes');
+        layerZIndex(zes, 'zeszIndex', 'OUTPUTzes');
+        getElementInfo("layerInfo", zes);
+    } else {
+        map.removeLayer(zes);
+    }
+});

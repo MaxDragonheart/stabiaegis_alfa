@@ -283,6 +283,45 @@
                         </div>
                     </div>
 
+                    <div class="control-box">
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" name="switch-basemap" id="naturaliProtette">
+                            <label class="custom-control-label" for="naturaliProtette">CMN - Aree naturali protette</label>
+                        </div>
+                        <div class="text-end">
+                            <a class="item-legend" data-bs-toggle="collapse" href="#naturaliProtettelegend"
+                                role="button" aria-expanded="false" aria-controls="naturaliProtettelegend"
+                                data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
+                                <i class="fas fa-book"></i>
+                            </a>
+                            <div class="collapse" id="naturaliProtettelegend">
+                              <div id="legendnaturaliProtette"></div>
+                            </div>
+                        </div>
+                        <div class="text-end">
+                            <a class="item-controls" data-bs-toggle="collapse" href="#naturaliProtettecontrols"
+                                role="button" aria-expanded="false" aria-controls="naturaliProtettecontrols"
+                                data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
+                                <i class="fas fa-cogs"></i>
+                            </a>
+                            <div class="collapse" id="naturaliProtettecontrols">
+                              <div class="slider-container">
+                                <input type="range" class="form-range"
+                                        min="0" max="100" value="100" id="naturaliProtetteslider">
+                                <label class="">Trasparenza: <span id="OUTPUTnaturaliProtette"></span> %</label>
+                              </div>
+                              <div class="counter-container">
+                                <div class="counter" id="">
+                                  <input class="counter-object" id="naturaliProtettezIndex"
+                                          type="number" name="zIndex" min="0" max="99" step="1"
+                                          placeholder="0"
+                                          value="0">
+                                </div>
+                                <label class="">z-Index</label>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
 
                   </div>
                 </div>
@@ -291,7 +330,7 @@
               <div class="accordion-item">
                 <h2 class="accordion-header" id="trasporti">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTrasporti" aria-expanded="false" aria-controls="collapseTrasporti">
-                    Trasporti ed Infrastrutture
+                    Trasporti, Infrastrutture ed Economia
                   </button>
                 </h2>
                 <div id="collapseTrasporti" class="accordion-collapse collapse" aria-labelledby="trasporti" data-bs-parent="#accordionExample">
@@ -567,6 +606,46 @@
                               <div class="counter-container">
                                 <div class="counter" id="">
                                   <input class="counter-object" id="ambitiSistemaPortizIndex"
+                                          type="number" name="zIndex" min="0" max="99" step="1"
+                                          placeholder="0"
+                                          value="0">
+                                </div>
+                                <label class="">z-Index</label>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="control-box">
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" name="switch-basemap" id="zes">
+                            <label class="custom-control-label" for="zes">CMN - Zona economia speciale</label>
+                        </div>
+                        <div class="text-end">
+                            <a class="item-legend" data-bs-toggle="collapse" href="#zeslegend"
+                                role="button" aria-expanded="false" aria-controls="zeslegend"
+                                data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
+                                <i class="fas fa-book"></i>
+                            </a>
+                            <div class="collapse" id="zeslegend">
+                              <div id="legendzes"></div>
+                            </div>
+                        </div>
+                        <div class="text-end">
+                            <a class="item-controls" data-bs-toggle="collapse" href="#zescontrols"
+                                role="button" aria-expanded="false" aria-controls="zescontrols"
+                                data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
+                                <i class="fas fa-cogs"></i>
+                            </a>
+                            <div class="collapse" id="zescontrols">
+                              <div class="slider-container">
+                                <input type="range" class="form-range"
+                                        min="0" max="100" value="100" id="zesslider">
+                                <label class="">Trasparenza: <span id="OUTPUTzes"></span> %</label>
+                              </div>
+                              <div class="counter-container">
+                                <div class="counter" id="">
+                                  <input class="counter-object" id="zeszIndex"
                                           type="number" name="zIndex" min="0" max="99" step="1"
                                           placeholder="0"
                                           value="0">
