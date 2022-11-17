@@ -323,6 +323,46 @@
                         </div>
                     </div>
 
+                    <div class="control-box">
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" name="switch-basemap" id="art142_m">
+                            <label class="custom-control-label" for="art142_m">CMN - Aree archeologiche</label>
+                        </div>
+                        <div class="text-end">
+                            <a class="item-legend" data-bs-toggle="collapse" href="#art142_mlegend"
+                                role="button" aria-expanded="false" aria-controls="art142_mlegend"
+                                data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
+                                <i class="fas fa-book"></i>
+                            </a>
+                            <div class="collapse" id="art142_mlegend">
+                              <div id="legendart142_m"></div>
+                            </div>
+                        </div>
+                        <div class="text-end">
+                            <a class="item-controls" data-bs-toggle="collapse" href="#art142_mcontrols"
+                                role="button" aria-expanded="false" aria-controls="art142_mcontrols"
+                                data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
+                                <i class="fas fa-cogs"></i>
+                            </a>
+                            <div class="collapse" id="art142_mcontrols">
+                              <div class="slider-container">
+                                <input type="range" class="form-range"
+                                        min="0" max="100" value="100" id="art142_mslider">
+                                <label class="">Trasparenza: <span id="OUTPUTart142_m"></span> %</label>
+                              </div>
+                              <div class="counter-container">
+                                <div class="counter" id="">
+                                  <input class="counter-object" id="art142_mzIndex"
+                                          type="number" name="zIndex" min="0" max="99" step="1"
+                                          placeholder="0"
+                                          value="0">
+                                </div>
+                                <label class="">z-Index</label>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+
                   </div>
                 </div>
               </div>

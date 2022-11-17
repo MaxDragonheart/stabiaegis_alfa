@@ -175,3 +175,28 @@ $('#art136').on('change', function() {
         map.removeLayer(art136);
     }
 });
+
+var art142_m = new ol.layer.Tile({
+    source: new ol.source.TileWMS({
+    url: wmsSource,
+    params: {
+        'LAYERS': 'art142_m',
+    }
+    }),
+    minZoom: 0,
+    maxZoom: 28,
+    zIndex: 1,
+    opacity: 1.00
+});
+$('#art142_m').on('change', function() {
+    let isChecked = $(this).is(':checked');
+    if (isChecked) {
+        map.addLayer(art142_m);
+        getElementLegendImg('legendart142_m', art142_m, wmsSource, 'art142_m');
+        layerOpacity(art142_m, 'art142_mslider', 'OUTPUTart142_m');
+        layerZIndex(art142_m, 'art142_mzIndex', 'OUTPUTart142_m');
+        getElementInfo("layerInfo", art142_m);
+    } else {
+        map.removeLayer(art142_m);
+    }
+});
