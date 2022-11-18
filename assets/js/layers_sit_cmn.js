@@ -375,3 +375,78 @@ $('#industrie_rischio_rilevante').on('change', function() {
         map.removeLayer(industrie_rischio_rilevante);
     }
 });
+
+var parchi_aree_naturali_protette_ptm = new ol.layer.Tile({
+    source: new ol.source.TileWMS({
+    url: wmsSource,
+    params: {
+        'LAYERS': 'parchi_aree_naturali_protette_ptm',
+    }
+    }),
+    minZoom: 0,
+    maxZoom: 28,
+    zIndex: 1,
+    opacity: 1.00
+});
+$('#parchi_aree_naturali_protette_ptm').on('change', function() {
+    let isChecked = $(this).is(':checked');
+    if (isChecked) {
+        map.addLayer(parchi_aree_naturali_protette_ptm);
+        getElementLegendImg('legendparchi_aree_naturali_protette_ptm', parchi_aree_naturali_protette_ptm, wmsSource, 'parchi_aree_naturali_protette_ptm');
+        layerOpacity(parchi_aree_naturali_protette_ptm, 'parchi_aree_naturali_protette_ptmslider', 'OUTPUTparchi_aree_naturali_protette_ptm');
+        layerZIndex(parchi_aree_naturali_protette_ptm, 'parchi_aree_naturali_protette_ptmzIndex', 'OUTPUTparchi_aree_naturali_protette_ptm');
+        getElementInfo("layerInfo", parchi_aree_naturali_protette_ptm);
+    } else {
+        map.removeLayer(parchi_aree_naturali_protette_ptm);
+    }
+});
+
+var parchi = new ol.layer.Tile({
+    source: new ol.source.TileWMS({
+    url: wmsSource,
+    params: {
+        'LAYERS': 'parchi_perimetrazione',
+    }
+    }),
+    minZoom: 0,
+    maxZoom: 28,
+    zIndex: 1,
+    opacity: 1.00
+});
+$('#parchi').on('change', function() {
+    let isChecked = $(this).is(':checked');
+    if (isChecked) {
+        map.addLayer(parchi);
+        getElementLegendImg('legendparchi', parchi, wmsSource, 'parchi');
+        layerOpacity(parchi, 'parchislider', 'OUTPUTparchi');
+        layerZIndex(parchi, 'parchizIndex', 'OUTPUTparchi');
+        getElementInfo("layerInfo", parchi);
+    } else {
+        map.removeLayer(parchi);
+    }
+});
+
+var parco_monti_lattari = new ol.layer.Tile({
+    source: new ol.source.TileWMS({
+    url: wmsSource,
+    params: {
+        'LAYERS': 'parco_monti_lattari',
+    }
+    }),
+    minZoom: 0,
+    maxZoom: 28,
+    zIndex: 1,
+    opacity: 1.00
+});
+$('#parco_monti_lattari').on('change', function() {
+    let isChecked = $(this).is(':checked');
+    if (isChecked) {
+        map.addLayer(parco_monti_lattari);
+        getElementLegendImg('legendparco_monti_lattari', parco_monti_lattari, wmsSource, 'parco_monti_lattari');
+        layerOpacity(parco_monti_lattari, 'parco_monti_lattarislider', 'OUTPUTparco_monti_lattari');
+        layerZIndex(parco_monti_lattari, 'parco_monti_lattarizIndex', 'OUTPUTparco_monti_lattari');
+        getElementInfo("layerInfo", parco_monti_lattari);
+    } else {
+        map.removeLayer(parco_monti_lattari);
+    }
+});

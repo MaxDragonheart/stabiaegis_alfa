@@ -58,7 +58,7 @@
     <div class="row">
 
         <div class="col-3">
-            <h5 class="">StabiaeGIS - versione alfa</h5>
+            <h5 class="">StabiaeGIS - <a href="https://it.wikipedia.org/wiki/Versione_alfa" target="_blank">versione alfa<a/></h5>
 
             <div class="accordion" id="accordionExample">
 
@@ -395,6 +395,126 @@
                               <div class="counter-container">
                                 <div class="counter" id="">
                                   <input class="counter-object" id="cave_praezIndex"
+                                          type="number" name="zIndex" min="0" max="99" step="1"
+                                          placeholder="0"
+                                          value="0">
+                                </div>
+                                <label class="">z-Index</label>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="control-box">
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" name="switch-basemap" id="parchi_aree_naturali_protette_ptm">
+                            <label class="custom-control-label" for="parchi_aree_naturali_protette_ptm">CMN - Parchi ed aree naturali protette</label>
+                        </div>
+                        <div class="text-end">
+                            <a class="item-legend" data-bs-toggle="collapse" href="#parchi_aree_naturali_protette_ptmlegend"
+                                role="button" aria-expanded="false" aria-controls="parchi_aree_naturali_protette_ptmlegend"
+                                data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
+                                <i class="fas fa-book"></i>
+                            </a>
+                            <div class="collapse" id="parchi_aree_naturali_protette_ptmlegend">
+                              <div id="legendparchi_aree_naturali_protette_ptm"></div>
+                            </div>
+                        </div>
+                        <div class="text-end">
+                            <a class="item-controls" data-bs-toggle="collapse" href="#parchi_aree_naturali_protette_ptmcontrols"
+                                role="button" aria-expanded="false" aria-controls="parchi_aree_naturali_protette_ptmcontrols"
+                                data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
+                                <i class="fas fa-cogs"></i>
+                            </a>
+                            <div class="collapse" id="parchi_aree_naturali_protette_ptmcontrols">
+                              <div class="slider-container">
+                                <input type="range" class="form-range"
+                                        min="0" max="100" value="100" id="parchi_aree_naturali_protette_ptmslider">
+                                <label class="">Trasparenza: <span id="OUTPUTparchi_aree_naturali_protette_ptm"></span> %</label>
+                              </div>
+                              <div class="counter-container">
+                                <div class="counter" id="">
+                                  <input class="counter-object" id="parchi_aree_naturali_protette_ptmzIndex"
+                                          type="number" name="zIndex" min="0" max="99" step="1"
+                                          placeholder="0"
+                                          value="0">
+                                </div>
+                                <label class="">z-Index</label>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="control-box">
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" name="switch-basemap" id="parchi">
+                            <label class="custom-control-label" for="parchi">CMN - Parchi</label>
+                        </div>
+                        <div class="text-end">
+                            <a class="item-legend" data-bs-toggle="collapse" href="#parchilegend"
+                                role="button" aria-expanded="false" aria-controls="parchilegend"
+                                data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
+                                <i class="fas fa-book"></i>
+                            </a>
+                            <div class="collapse" id="parchilegend">
+                              <div id="legendparchi"></div>
+                            </div>
+                        </div>
+                        <div class="text-end">
+                            <a class="item-controls" data-bs-toggle="collapse" href="#parchicontrols"
+                                role="button" aria-expanded="false" aria-controls="parchicontrols"
+                                data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
+                                <i class="fas fa-cogs"></i>
+                            </a>
+                            <div class="collapse" id="parchicontrols">
+                              <div class="slider-container">
+                                <input type="range" class="form-range"
+                                        min="0" max="100" value="100" id="parchislider">
+                                <label class="">Trasparenza: <span id="OUTPUTparchi"></span> %</label>
+                              </div>
+                              <div class="counter-container">
+                                <div class="counter" id="">
+                                  <input class="counter-object" id="parchizIndex"
+                                          type="number" name="zIndex" min="0" max="99" step="1"
+                                          placeholder="0"
+                                          value="0">
+                                </div>
+                                <label class="">z-Index</label>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="control-box">
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" name="switch-basemap" id="parco_monti_lattari">
+                            <label class="custom-control-label" for="parco_monti_lattari">CMN - Parco dei Monti Lattari</label>
+                        </div>
+                        <div class="text-end">
+                            <a class="item-legend" data-bs-toggle="collapse" href="#parco_monti_lattarilegend"
+                                role="button" aria-expanded="false" aria-controls="parco_monti_lattarilegend"
+                                data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
+                                <i class="fas fa-book"></i>
+                            </a>
+                            <div class="collapse" id="parco_monti_lattarilegend">
+                              <div id="legendparco_monti_lattari"></div>
+                            </div>
+                        </div>
+                        <div class="text-end">
+                            <a class="item-controls" data-bs-toggle="collapse" href="#parco_monti_lattaricontrols"
+                                role="button" aria-expanded="false" aria-controls="parco_monti_lattaricontrols"
+                                data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
+                                <i class="fas fa-cogs"></i>
+                            </a>
+                            <div class="collapse" id="parco_monti_lattaricontrols">
+                              <div class="slider-container">
+                                <input type="range" class="form-range"
+                                        min="0" max="100" value="100" id="parco_monti_lattarislider">
+                                <label class="">Trasparenza: <span id="OUTPUTparco_monti_lattari"></span> %</label>
+                              </div>
+                              <div class="counter-container">
+                                <div class="counter" id="">
+                                  <input class="counter-object" id="parco_monti_lattarizIndex"
                                           type="number" name="zIndex" min="0" max="99" step="1"
                                           placeholder="0"
                                           value="0">
