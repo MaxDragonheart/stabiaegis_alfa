@@ -1210,6 +1210,59 @@
                 </div>
               </div>
 
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="pianiSovracomunali">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsepianiSovracomunali" aria-expanded="false" aria-controls="collapsepianiSovracomunali">
+                    Piani Sovracomunali
+                  </button>
+                </h2>
+                <div id="collapsepianiSovracomunali" class="accordion-collapse collapse" aria-labelledby="pianiSovracomunali" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+
+                    <div class="control-box">
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" name="switch-basemap" id="puc_comuni">
+                            <label class="custom-control-label" for="puc_comuni">CMN - PUC Comuni</label>
+                        </div>
+                        <div class="text-end">
+                            <a class="item-legend" data-bs-toggle="collapse" href="#puc_comunilegend"
+                                role="button" aria-expanded="false" aria-controls="puc_comunilegend"
+                                data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
+                                <i class="fas fa-book"></i>
+                            </a>
+                            <div class="collapse" id="puc_comunilegend">
+                              <div id="legendpuc_comuni"></div>
+                            </div>
+                        </div>
+                        <div class="text-end">
+                            <a class="item-controls" data-bs-toggle="collapse" href="#puc_comunicontrols"
+                                role="button" aria-expanded="false" aria-controls="puc_comunicontrols"
+                                data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
+                                <i class="fas fa-cogs"></i>
+                            </a>
+                            <div class="collapse" id="puc_comunicontrols">
+                              <div class="slider-container">
+                                <input type="range" class="form-range"
+                                        min="0" max="100" value="100" id="puc_comunislider">
+                                <label class="">Trasparenza: <span id="OUTPUTpuc_comuni"></span> %</label>
+                              </div>
+                              <div class="counter-container">
+                                <div class="counter" id="">
+                                  <input class="counter-object" id="puc_comunizIndex"
+                                          type="number" name="zIndex" min="0" max="99" step="1"
+                                          placeholder="0"
+                                          value="0">
+                                </div>
+                                <label class="">z-Index</label>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
               <div class="accordion-item">
                 <h2 class="accordion-header" id="istruzione">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseistruzione" aria-expanded="false" aria-controls="collapseistruzione">

@@ -450,3 +450,28 @@ $('#parco_monti_lattari').on('change', function() {
         map.removeLayer(parco_monti_lattari);
     }
 });
+
+var puc_comuni = new ol.layer.Tile({
+    source: new ol.source.TileWMS({
+    url: wmsSource,
+    params: {
+        'LAYERS': 'puc_comuni',
+    }
+    }),
+    minZoom: 0,
+    maxZoom: 28,
+    zIndex: 1,
+    opacity: 1.00
+});
+$('#puc_comuni').on('change', function() {
+    let isChecked = $(this).is(':checked');
+    if (isChecked) {
+        map.addLayer(puc_comuni);
+        getElementLegendImg('legendpuc_comuni', puc_comuni, wmsSource, 'puc_comuni');
+        layerOpacity(puc_comuni, 'puc_comunislider', 'OUTPUTpuc_comuni');
+        layerZIndex(puc_comuni, 'puc_comunizIndex', 'OUTPUTpuc_comuni');
+        getElementInfo("layerInfo", puc_comuni);
+    } else {
+        map.removeLayer(puc_comuni);
+    }
+});
