@@ -858,6 +858,126 @@
                         </div>
                     </div>
 
+                    <div class="control-box">
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" name="switch-basemap" id="impianti_aut_emissioni">
+                            <label class="custom-control-label" for="impianti_aut_emissioni">CMN - Industrie ed impianti autorizzati alle emissioni</label>
+                        </div>
+                        <div class="text-end">
+                            <a class="item-legend" data-bs-toggle="collapse" href="#impianti_aut_emissionilegend"
+                                role="button" aria-expanded="false" aria-controls="impianti_aut_emissionilegend"
+                                data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
+                                <i class="fas fa-book"></i>
+                            </a>
+                            <div class="collapse" id="impianti_aut_emissionilegend">
+                              <div id="legendimpianti_aut_emissioni"></div>
+                            </div>
+                        </div>
+                        <div class="text-end">
+                            <a class="item-controls" data-bs-toggle="collapse" href="#impianti_aut_emissionicontrols"
+                                role="button" aria-expanded="false" aria-controls="impianti_aut_emissionicontrols"
+                                data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
+                                <i class="fas fa-cogs"></i>
+                            </a>
+                            <div class="collapse" id="impianti_aut_emissionicontrols">
+                              <div class="slider-container">
+                                <input type="range" class="form-range"
+                                        min="0" max="100" value="100" id="impianti_aut_emissionislider">
+                                <label class="">Trasparenza: <span id="OUTPUTimpianti_aut_emissioni"></span> %</label>
+                              </div>
+                              <div class="counter-container">
+                                <div class="counter" id="">
+                                  <input class="counter-object" id="impianti_aut_emissionizIndex"
+                                          type="number" name="zIndex" min="0" max="99" step="1"
+                                          placeholder="0"
+                                          value="0">
+                                </div>
+                                <label class="">z-Index</label>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="control-box">
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" name="switch-basemap" id="impianti_aia">
+                            <label class="custom-control-label" for="impianti_aia">CMN - Impianti AIA</label>
+                        </div>
+                        <div class="text-end">
+                            <a class="item-legend" data-bs-toggle="collapse" href="#impianti_aialegend"
+                                role="button" aria-expanded="false" aria-controls="impianti_aialegend"
+                                data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
+                                <i class="fas fa-book"></i>
+                            </a>
+                            <div class="collapse" id="impianti_aialegend">
+                              <div id="legendimpianti_aia"></div>
+                            </div>
+                        </div>
+                        <div class="text-end">
+                            <a class="item-controls" data-bs-toggle="collapse" href="#impianti_aiacontrols"
+                                role="button" aria-expanded="false" aria-controls="impianti_aiacontrols"
+                                data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
+                                <i class="fas fa-cogs"></i>
+                            </a>
+                            <div class="collapse" id="impianti_aiacontrols">
+                              <div class="slider-container">
+                                <input type="range" class="form-range"
+                                        min="0" max="100" value="100" id="impianti_aiaslider">
+                                <label class="">Trasparenza: <span id="OUTPUTimpianti_aia"></span> %</label>
+                              </div>
+                              <div class="counter-container">
+                                <div class="counter" id="">
+                                  <input class="counter-object" id="impianti_aiazIndex"
+                                          type="number" name="zIndex" min="0" max="99" step="1"
+                                          placeholder="0"
+                                          value="0">
+                                </div>
+                                <label class="">z-Index</label>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="control-box">
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" name="switch-basemap" id="industrie_rischio_rilevante">
+                            <label class="custom-control-label" for="industrie_rischio_rilevante">CMN - Industrie a rischio incidente rilevante</label>
+                        </div>
+                        <div class="text-end">
+                            <a class="item-legend" data-bs-toggle="collapse" href="#industrie_rischio_rilevantelegend"
+                                role="button" aria-expanded="false" aria-controls="industrie_rischio_rilevantelegend"
+                                data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
+                                <i class="fas fa-book"></i>
+                            </a>
+                            <div class="collapse" id="industrie_rischio_rilevantelegend">
+                              <div id="legendindustrie_rischio_rilevante"></div>
+                            </div>
+                        </div>
+                        <div class="text-end">
+                            <a class="item-controls" data-bs-toggle="collapse" href="#industrie_rischio_rilevantecontrols"
+                                role="button" aria-expanded="false" aria-controls="industrie_rischio_rilevantecontrols"
+                                data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
+                                <i class="fas fa-cogs"></i>
+                            </a>
+                            <div class="collapse" id="industrie_rischio_rilevantecontrols">
+                              <div class="slider-container">
+                                <input type="range" class="form-range"
+                                        min="0" max="100" value="100" id="industrie_rischio_rilevanteslider">
+                                <label class="">Trasparenza: <span id="OUTPUTindustrie_rischio_rilevante"></span> %</label>
+                              </div>
+                              <div class="counter-container">
+                                <div class="counter" id="">
+                                  <input class="counter-object" id="industrie_rischio_rilevantezIndex"
+                                          type="number" name="zIndex" min="0" max="99" step="1"
+                                          placeholder="0"
+                                          value="0">
+                                </div>
+                                <label class="">z-Index</label>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+
                   </div>
                 </div>
               </div>

@@ -300,3 +300,78 @@ $('#edifici_scolastici').on('change', function() {
         map.removeLayer(edifici_scolastici);
     }
 });
+
+var impianti_aia = new ol.layer.Tile({
+    source: new ol.source.TileWMS({
+    url: wmsSource,
+    params: {
+        'LAYERS': 'impianti_aia',
+    }
+    }),
+    minZoom: 0,
+    maxZoom: 28,
+    zIndex: 1,
+    opacity: 1.00
+});
+$('#impianti_aia').on('change', function() {
+    let isChecked = $(this).is(':checked');
+    if (isChecked) {
+        map.addLayer(impianti_aia);
+        getElementLegendImg('legendimpianti_aia', impianti_aia, wmsSource, 'impianti_aia');
+        layerOpacity(impianti_aia, 'impianti_aiaslider', 'OUTPUTimpianti_aia');
+        layerZIndex(impianti_aia, 'impianti_aiazIndex', 'OUTPUTimpianti_aia');
+        getElementInfo("layerInfo", impianti_aia);
+    } else {
+        map.removeLayer(impianti_aia);
+    }
+});
+
+var impianti_aut_emissioni = new ol.layer.Tile({
+    source: new ol.source.TileWMS({
+    url: wmsSource,
+    params: {
+        'LAYERS': 'impianti_aut_emissioni',
+    }
+    }),
+    minZoom: 0,
+    maxZoom: 28,
+    zIndex: 1,
+    opacity: 1.00
+});
+$('#impianti_aut_emissioni').on('change', function() {
+    let isChecked = $(this).is(':checked');
+    if (isChecked) {
+        map.addLayer(impianti_aut_emissioni);
+        getElementLegendImg('legendimpianti_aut_emissioni', impianti_aut_emissioni, wmsSource, 'impianti_aut_emissioni');
+        layerOpacity(impianti_aut_emissioni, 'impianti_aut_emissionislider', 'OUTPUTimpianti_aut_emissioni');
+        layerZIndex(impianti_aut_emissioni, 'impianti_aut_emissionizIndex', 'OUTPUTimpianti_aut_emissioni');
+        getElementInfo("layerInfo", impianti_aut_emissioni);
+    } else {
+        map.removeLayer(impianti_aut_emissioni);
+    }
+});
+
+var industrie_rischio_rilevante = new ol.layer.Tile({
+    source: new ol.source.TileWMS({
+    url: wmsSource,
+    params: {
+        'LAYERS': 'industrie_rischio_rilevante',
+    }
+    }),
+    minZoom: 0,
+    maxZoom: 28,
+    zIndex: 1,
+    opacity: 1.00
+});
+$('#industrie_rischio_rilevante').on('change', function() {
+    let isChecked = $(this).is(':checked');
+    if (isChecked) {
+        map.addLayer(industrie_rischio_rilevante);
+        getElementLegendImg('legendindustrie_rischio_rilevante', industrie_rischio_rilevante, wmsSource, 'industrie_rischio_rilevante');
+        layerOpacity(industrie_rischio_rilevante, 'industrie_rischio_rilevanteslider', 'OUTPUTindustrie_rischio_rilevante');
+        layerZIndex(industrie_rischio_rilevante, 'industrie_rischio_rilevantezIndex', 'OUTPUTindustrie_rischio_rilevante');
+        getElementInfo("layerInfo", industrie_rischio_rilevante);
+    } else {
+        map.removeLayer(industrie_rischio_rilevante);
+    }
+});
