@@ -1,11 +1,11 @@
 // List of layers and relative functionalities
-var mainUrl = 'http://0.0.0.0:8300/geoserver/'
-var workspace = 'CastellammarediStabia'
-var wmsSource = mainUrl + workspace +'/wms'
+// var mainUrl = 'http://0.0.0.0:8300/geoserver/'
+// var workspace = 'CastellammarediStabia'
+// var wmsSourceStabiae = mainUrl + workspace +'/wms'
 
 var confineComunale = new ol.layer.Tile({
     source: new ol.source.TileWMS({
-    url: wmsSource,
+    url: wmsSourceStabiae,
     params: {
         'LAYERS': 'confine_comunale',
         //'STYLES': null,
@@ -21,7 +21,7 @@ map.addLayer(confineComunale);
 
 var antenne = new ol.layer.Tile({
     source: new ol.source.TileWMS({
-    url: wmsSource,
+    url: wmsSourceStabiae,
     params: {
         'LAYERS': 'antenne',
         //'STYLES': null,
@@ -36,7 +36,7 @@ $('#antenne').on('change', function() {
     let isChecked = $(this).is(':checked');
     if (isChecked) {
         map.addLayer(antenne);
-        getElementLegendImg('legendantenne', antenne, wmsSource, 'antenne');
+        getElementLegendImg('legendantenne', antenne, wmsSourceStabiae, 'antenne');
         layerOpacity(antenne, 'antenneslider', 'OUTPUTantenne');
         layerZIndex(antenne, 'antennezIndex', 'OUTPUTantenne');
         getElementInfo("layerInfo", antenne);
@@ -47,7 +47,7 @@ $('#antenne').on('change', function() {
 
 var reteTelefonica = new ol.layer.Tile({
     source: new ol.source.TileWMS({
-    url: wmsSource,
+    url: wmsSourceStabiae,
     params: {
         'LAYERS': 'rete_telefonica',
         //'STYLES': 'CLC2018',
@@ -62,7 +62,7 @@ $('#reteTelefonica').on('change', function() {
     let isChecked = $(this).is(':checked');
     if (isChecked) {
         map.addLayer(reteTelefonica);
-        getElementLegendImg('legendreteTelefonica', reteTelefonica, wmsSource, 'rete_telefonica');
+        getElementLegendImg('legendreteTelefonica', reteTelefonica, wmsSourceStabiae, 'rete_telefonica');
         layerOpacity(reteTelefonica, 'reteTelefonicaslider', 'OUTPUTreteTelefonica');
         layerZIndex(reteTelefonica, 'reteTelefonicazIndex', 'OUTPUTreteTelefonica');
         getElementInfo("layerInfo", reteTelefonica);
@@ -73,7 +73,7 @@ $('#reteTelefonica').on('change', function() {
 
 var collettoreFognario = new ol.layer.Tile({
     source: new ol.source.TileWMS({
-    url: wmsSource,
+    url: wmsSourceStabiae,
     params: {
         'LAYERS': 'collettore_fognario',
         //'STYLES': 'CLC2018',
@@ -88,7 +88,7 @@ $('#collettoreFognario').on('change', function() {
     let isChecked = $(this).is(':checked');
     if (isChecked) {
         map.addLayer(collettoreFognario);
-        getElementLegendImg('legendcollettoreFognario', collettoreFognario, wmsSource, 'collettore_fognario');
+        getElementLegendImg('legendcollettoreFognario', collettoreFognario, wmsSourceStabiae, 'collettore_fognario');
         layerOpacity(collettoreFognario, 'collettoreFognarioslider', 'OUTPUTcollettoreFognario');
         layerZIndex(collettoreFognario, 'collettoreFognariozIndex', 'OUTPUTcollettoreFognario');
         getElementInfo("layerInfo", collettoreFognario);
@@ -99,7 +99,7 @@ $('#collettoreFognario').on('change', function() {
 
 var depuratore = new ol.layer.Tile({
     source: new ol.source.TileWMS({
-    url: wmsSource,
+    url: wmsSourceStabiae,
     params: {
         'LAYERS': 'depuratore',
         //'STYLES': 'CLC2018',
@@ -114,7 +114,7 @@ $('#depuratore').on('change', function() {
     let isChecked = $(this).is(':checked');
     if (isChecked) {
         map.addLayer(depuratore);
-        getElementLegendImg('legenddepuratore', depuratore, wmsSource, 'depuratore');
+        getElementLegendImg('legenddepuratore', depuratore, wmsSourceStabiae, 'depuratore');
         layerOpacity(depuratore, 'depuratoreslider', 'OUTPUTdepuratore');
         layerZIndex(depuratore, 'depuratorezIndex', 'OUTPUTdepuratore');
         getElementInfo("layerInfo", depuratore);
@@ -125,7 +125,7 @@ $('#depuratore').on('change', function() {
 
 var elettrodottoLocale = new ol.layer.Tile({
     source: new ol.source.TileWMS({
-    url: wmsSource,
+    url: wmsSourceStabiae,
     params: {
         'LAYERS': 'elettrodotto_locale',
         //'STYLES': 'CLC2018',
@@ -140,7 +140,7 @@ $('#elettrodottoLocale').on('change', function() {
     let isChecked = $(this).is(':checked');
     if (isChecked) {
         map.addLayer(elettrodottoLocale);
-        getElementLegendImg('legendelettrodottoLocale', elettrodottoLocale, wmsSource, 'elettrodotto_locale');
+        getElementLegendImg('legendelettrodottoLocale', elettrodottoLocale, wmsSourceStabiae, 'elettrodotto_locale');
         layerOpacity(elettrodottoLocale, 'elettrodottoLocaleslider', 'OUTPUTelettrodottoLocale');
         layerZIndex(elettrodottoLocale, 'elettrodottoLocalezIndex', 'OUTPUTelettrodottoLocale');
         getElementInfo("layerInfo", elettrodottoLocale);
@@ -151,7 +151,7 @@ $('#elettrodottoLocale').on('change', function() {
 
 var retePubblicaIlluminazione = new ol.layer.Tile({
     source: new ol.source.TileWMS({
-    url: wmsSource,
+    url: wmsSourceStabiae,
     params: {
         'LAYERS': 'rete_pubblica_illuminazione',
         //'STYLES': 'CLC2018',
@@ -166,7 +166,7 @@ $('#retePubblicaIlluminazione').on('change', function() {
     let isChecked = $(this).is(':checked');
     if (isChecked) {
         map.addLayer(retePubblicaIlluminazione);
-        getElementLegendImg('legendretePubblicaIlluminazione', retePubblicaIlluminazione, wmsSource, 'rete_pubblica_illuminazione');
+        getElementLegendImg('legendretePubblicaIlluminazione', retePubblicaIlluminazione, wmsSourceStabiae, 'rete_pubblica_illuminazione');
         layerOpacity(retePubblicaIlluminazione, 'retePubblicaIlluminazioneslider', 'OUTPUTretePubblicaIlluminazione');
         layerZIndex(retePubblicaIlluminazione, 'retePubblicaIlluminazionezIndex', 'OUTPUTretePubblicaIlluminazione');
         getElementInfo("layerInfo", retePubblicaIlluminazione);
@@ -177,7 +177,7 @@ $('#retePubblicaIlluminazione').on('change', function() {
 
 var edificiPubbliciCensiti = new ol.layer.Tile({
     source: new ol.source.TileWMS({
-    url: wmsSource,
+    url: wmsSourceStabiae,
     params: {
         'LAYERS': 'edifici_pubblici_censiti',
         //'STYLES': 'CLC2018',
@@ -192,7 +192,7 @@ $('#edificiPubbliciCensiti').on('change', function() {
     let isChecked = $(this).is(':checked');
     if (isChecked) {
         map.addLayer(edificiPubbliciCensiti);
-        getElementLegendImg('legendedificiPubbliciCensiti', edificiPubbliciCensiti, wmsSource, 'edifici_pubblici_censiti');
+        getElementLegendImg('legendedificiPubbliciCensiti', edificiPubbliciCensiti, wmsSourceStabiae, 'edifici_pubblici_censiti');
         layerOpacity(edificiPubbliciCensiti, 'edificiPubbliciCensitislider', 'OUTPUTedificiPubbliciCensiti');
         layerZIndex(edificiPubbliciCensiti, 'edificiPubbliciCensitizIndex', 'OUTPUTedificiPubbliciCensiti');
         getElementInfo("layerInfo", edificiPubbliciCensiti);
@@ -203,7 +203,7 @@ $('#edificiPubbliciCensiti').on('change', function() {
 
 var dividenteDemaniale = new ol.layer.Tile({
     source: new ol.source.TileWMS({
-    url: wmsSource,
+    url: wmsSourceStabiae,
     params: {
         'LAYERS': 'dividente_demaniale',
         //'STYLES': 'CLC2018',
@@ -218,7 +218,7 @@ $('#dividenteDemaniale').on('change', function() {
     let isChecked = $(this).is(':checked');
     if (isChecked) {
         map.addLayer(dividenteDemaniale);
-        getElementLegendImg('legenddividenteDemaniale', dividenteDemaniale, wmsSource, 'dividente_demaniale');
+        getElementLegendImg('legenddividenteDemaniale', dividenteDemaniale, wmsSourceStabiae, 'dividente_demaniale');
         layerOpacity(dividenteDemaniale, 'dividenteDemanialeslider', 'OUTPUTdividenteDemaniale');
         layerZIndex(dividenteDemaniale, 'dividenteDemanialezIndex', 'OUTPUTdividenteDemaniale');
         getElementInfo("layerInfo", dividenteDemaniale);
@@ -229,7 +229,7 @@ $('#dividenteDemaniale').on('change', function() {
 
 var proprietaPubbliche = new ol.layer.Tile({
     source: new ol.source.TileWMS({
-    url: wmsSource,
+    url: wmsSourceStabiae,
     params: {
         'LAYERS': 'proprieta_pubbliche',
         //'STYLES': 'CLC2018',
@@ -244,7 +244,7 @@ $('#proprietaPubbliche').on('change', function() {
     let isChecked = $(this).is(':checked');
     if (isChecked) {
         map.addLayer(proprietaPubbliche);
-        getElementLegendImg('legendproprietaPubbliche', proprietaPubbliche, wmsSource, 'proprieta_pubbliche');
+        getElementLegendImg('legendproprietaPubbliche', proprietaPubbliche, wmsSourceStabiae, 'proprieta_pubbliche');
         layerOpacity(proprietaPubbliche, 'proprietaPubblicheslider', 'OUTPUTproprietaPubbliche');
         layerZIndex(proprietaPubbliche, 'proprietaPubblichezIndex', 'OUTPUTproprietaPubbliche');
         getElementInfo("layerInfo", proprietaPubbliche);
@@ -255,7 +255,7 @@ $('#proprietaPubbliche').on('change', function() {
 
 var dsmLidar = new ol.layer.Tile({
     source: new ol.source.TileWMS({
-    url: wmsSource,
+    url: wmsSourceStabiae,
     params: {
         'LAYERS': 'dsm_lidar_1m',
         //'STYLES': 'CLC2018',
@@ -270,7 +270,7 @@ $('#dsmLidar').on('change', function() {
     let isChecked = $(this).is(':checked');
     if (isChecked) {
         map.addLayer(dsmLidar);
-        getElementLegendImg('legenddsmLidar', dsmLidar, wmsSource, 'dsm_lidar_1m');
+        getElementLegendImg('legenddsmLidar', dsmLidar, wmsSourceStabiae, 'dsm_lidar_1m');
         layerOpacity(dsmLidar, 'dsmLidarslider', 'OUTPUTdsmLidar');
         layerZIndex(dsmLidar, 'dsmLidarzIndex', 'OUTPUTdsmLidar');
         getElementInfo("layerInfo", dsmLidar);
@@ -281,7 +281,7 @@ $('#dsmLidar').on('change', function() {
 
 var dtmLidar = new ol.layer.Tile({
     source: new ol.source.TileWMS({
-    url: wmsSource,
+    url: wmsSourceStabiae,
     params: {
         'LAYERS': 'dtm_lidar_1m',
         //'STYLES': 'CLC2018',
@@ -296,7 +296,7 @@ $('#dtmLidar').on('change', function() {
     let isChecked = $(this).is(':checked');
     if (isChecked) {
         map.addLayer(dtmLidar);
-        getElementLegendImg('legenddtmLidar', dtmLidar, wmsSource, 'dtm_lidar_1m');
+        getElementLegendImg('legenddtmLidar', dtmLidar, wmsSourceStabiae, 'dtm_lidar_1m');
         layerOpacity(dtmLidar, 'dtmLidarslider', 'OUTPUTdtmLidar');
         layerZIndex(dtmLidar, 'dtmLidarzIndex', 'OUTPUTdtmLidar');
         getElementInfo("layerInfo", dtmLidar);

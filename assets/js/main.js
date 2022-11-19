@@ -108,3 +108,7 @@ let isChecked = $(this).is(':checked');
         map.removeLayer(satellite);
     }
 });
+
+var mainUrl = 'http://0.0.0.0:8300/geoserver/'
+var workspace = 'CastellammarediStabia'
+var wmsSourceStabiae = mainUrl + workspace +'/wms'

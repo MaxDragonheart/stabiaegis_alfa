@@ -525,3 +525,28 @@ $('#sin').on('change', function() {
         map.removeLayer(sin);
     }
 });
+
+var siti_unesco = new ol.layer.Tile({
+    source: new ol.source.TileWMS({
+    url: wmsSource,
+    params: {
+        'LAYERS': 'siti_unesco',
+    }
+    }),
+    minZoom: 0,
+    maxZoom: 28,
+    zIndex: 1,
+    opacity: 1.00
+});
+$('#siti_unesco').on('change', function() {
+    let isChecked = $(this).is(':checked');
+    if (isChecked) {
+        map.addLayer(siti_unesco);
+        getElementLegendImg('legendsiti_unesco', siti_unesco, wmsSource, 'siti_unesco');
+        layerOpacity(siti_unesco, 'siti_unescoslider', 'OUTPUTsiti_unesco');
+        layerZIndex(siti_unesco, 'siti_unescozIndex', 'OUTPUTsiti_unesco');
+        getElementInfo("layerInfo", siti_unesco);
+    } else {
+        map.removeLayer(siti_unesco);
+    }
+});
