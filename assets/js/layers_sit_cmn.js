@@ -475,3 +475,28 @@ $('#puc_comuni').on('change', function() {
         map.removeLayer(puc_comuni);
     }
 });
+
+var sic_zps_zsc = new ol.layer.Tile({
+    source: new ol.source.TileWMS({
+    url: wmsSource,
+    params: {
+        'LAYERS': 'sic_zps_zsc',
+    }
+    }),
+    minZoom: 0,
+    maxZoom: 28,
+    zIndex: 1,
+    opacity: 1.00
+});
+$('#sic_zps_zsc').on('change', function() {
+    let isChecked = $(this).is(':checked');
+    if (isChecked) {
+        map.addLayer(sic_zps_zsc);
+        getElementLegendImg('legendsic_zps_zsc', sic_zps_zsc, wmsSource, 'sic_zps_zsc');
+        layerOpacity(sic_zps_zsc, 'sic_zps_zscslider', 'OUTPUTsic_zps_zsc');
+        layerZIndex(sic_zps_zsc, 'sic_zps_zsczIndex', 'OUTPUTsic_zps_zsc');
+        getElementInfo("layerInfo", sic_zps_zsc);
+    } else {
+        map.removeLayer(sic_zps_zsc);
+    }
+});
