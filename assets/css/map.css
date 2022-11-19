@@ -36,3 +36,7 @@ html, body {
   width: 15vw !important;
   height: 37.5vh !important;
 }
+.scroll {
+  height: 250px;
+  overflow: scroll;
+}

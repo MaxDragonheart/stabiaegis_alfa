@@ -58,7 +58,7 @@
     <div class="row">
 
         <div class="col-3">
-            <h5 class="">StabiaeGIS - <a href="https://it.wikipedia.org/wiki/Versione_alfa" target="_blank">versione alfa<a/></h5>
+            <h3 class="">StabiaeGIS - <a href="https://it.wikipedia.org/wiki/Versione_alfa" target="_blank">versione alfa<a/></h3>
 
             <div class="accordion" id="accordionExample">
 
@@ -96,7 +96,7 @@
                     Piano Urbanistico Comunale - PUC
                   </button>
                 </h2>
-                <div id="collapsePuc" class="accordion-collapse collapse" aria-labelledby="puc" data-bs-parent="#accordionExample">
+                <div id="collapsePuc" class="accordion-collapse collapse scroll" aria-labelledby="puc" data-bs-parent="#accordionExample">
                   <div class="accordion-body">
 
                     <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
@@ -111,7 +111,7 @@
                     Castellammare Ufficio Sostenibilità - CUS
                   </button>
                 </h2>
-                <div id="collapseCus" class="accordion-collapse collapse" aria-labelledby="cus" data-bs-parent="#accordionExample">
+                <div id="collapseCus" class="accordion-collapse collapse scroll" aria-labelledby="cus" data-bs-parent="#accordionExample">
                   <div class="accordion-body">
                     <div class="control-box">
                         <div class="custom-control custom-switch">
@@ -162,7 +162,7 @@
                     Archeologia e Paesaggio
                   </button>
                 </h2>
-                <div id="collapseArcheo" class="accordion-collapse collapse" aria-labelledby="archeo" data-bs-parent="#accordionExample">
+                <div id="collapseArcheo" class="accordion-collapse collapse scroll" aria-labelledby="archeo" data-bs-parent="#accordionExample">
                   <div class="accordion-body">
 
                     <div class="control-box">
@@ -565,6 +565,46 @@
                         </div>
                     </div>
 
+                    <div class="control-box">
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" name="switch-basemap" id="sin">
+                            <label class="custom-control-label" for="sin">CMN - Siti di interesse nazionale</label>
+                        </div>
+                        <div class="text-end">
+                            <a class="item-legend" data-bs-toggle="collapse" href="#sinlegend"
+                                role="button" aria-expanded="false" aria-controls="sinlegend"
+                                data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
+                                <i class="fas fa-book"></i>
+                            </a>
+                            <div class="collapse" id="sinlegend">
+                              <div id="legendsin"></div>
+                            </div>
+                        </div>
+                        <div class="text-end">
+                            <a class="item-controls" data-bs-toggle="collapse" href="#sincontrols"
+                                role="button" aria-expanded="false" aria-controls="sincontrols"
+                                data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
+                                <i class="fas fa-cogs"></i>
+                            </a>
+                            <div class="collapse" id="sincontrols">
+                              <div class="slider-container">
+                                <input type="range" class="form-range"
+                                        min="0" max="100" value="100" id="sinslider">
+                                <label class="">Trasparenza: <span id="OUTPUTsin"></span> %</label>
+                              </div>
+                              <div class="counter-container">
+                                <div class="counter" id="">
+                                  <input class="counter-object" id="sinzIndex"
+                                          type="number" name="zIndex" min="0" max="99" step="1"
+                                          placeholder="0"
+                                          value="0">
+                                </div>
+                                <label class="">z-Index</label>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+
                   </div>
                 </div>
               </div>
@@ -575,7 +615,7 @@
                     Trasporti, Infrastrutture ed Economia
                   </button>
                 </h2>
-                <div id="collapseTrasporti" class="accordion-collapse collapse" aria-labelledby="trasporti" data-bs-parent="#accordionExample">
+                <div id="collapseTrasporti" class="accordion-collapse collapse scroll" aria-labelledby="trasporti" data-bs-parent="#accordionExample">
                   <div class="accordion-body">
 
                     <div class="control-box">
@@ -1148,7 +1188,7 @@
                     Demanio
                   </button>
                 </h2>
-                <div id="collapseDemanio" class="accordion-collapse collapse" aria-labelledby="demanio" data-bs-parent="#accordionExample">
+                <div id="collapseDemanio" class="accordion-collapse collapse scroll" aria-labelledby="demanio" data-bs-parent="#accordionExample">
                   <div class="accordion-body">
 
                     <div class="control-box">
@@ -1241,7 +1281,7 @@
                     Cartografia storica
                   </button>
                 </h2>
-                <div id="collapseStoria" class="accordion-collapse collapse" aria-labelledby="storia" data-bs-parent="#accordionExample">
+                <div id="collapseStoria" class="accordion-collapse collapse scroll" aria-labelledby="storia" data-bs-parent="#accordionExample">
                   <div class="accordion-body">
 
                     <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
@@ -1256,7 +1296,7 @@
                     Piani Sovracomunali
                   </button>
                 </h2>
-                <div id="collapsepianiSovracomunali" class="accordion-collapse collapse" aria-labelledby="pianiSovracomunali" data-bs-parent="#accordionExample">
+                <div id="collapsepianiSovracomunali" class="accordion-collapse collapse scroll" aria-labelledby="pianiSovracomunali" data-bs-parent="#accordionExample">
                   <div class="accordion-body">
 
                     <div class="control-box">
@@ -1309,7 +1349,7 @@
                     Istruzione
                   </button>
                 </h2>
-                <div id="collapseistruzione" class="accordion-collapse collapse" aria-labelledby="istruzione" data-bs-parent="#accordionExample">
+                <div id="collapseistruzione" class="accordion-collapse collapse scroll" aria-labelledby="istruzione" data-bs-parent="#accordionExample">
                   <div class="accordion-body">
 
                     <div class="control-box">
@@ -1362,7 +1402,7 @@
                     Digital Elevation Model
                   </button>
                 </h2>
-                <div id="collapseDem" class="accordion-collapse collapse" aria-labelledby="dem" data-bs-parent="#accordionExample">
+                <div id="collapseDem" class="accordion-collapse collapse scroll" aria-labelledby="dem" data-bs-parent="#accordionExample">
                   <div class="accordion-body">
 
                     <div class="control-box">

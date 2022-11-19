@@ -500,3 +500,28 @@ $('#sic_zps_zsc').on('change', function() {
         map.removeLayer(sic_zps_zsc);
     }
 });
+
+var sin = new ol.layer.Tile({
+    source: new ol.source.TileWMS({
+    url: wmsSource,
+    params: {
+        'LAYERS': 'sin',
+    }
+    }),
+    minZoom: 0,
+    maxZoom: 28,
+    zIndex: 1,
+    opacity: 1.00
+});
+$('#sin').on('change', function() {
+    let isChecked = $(this).is(':checked');
+    if (isChecked) {
+        map.addLayer(sin);
+        getElementLegendImg('legendsin', sin, wmsSource, 'sin');
+        layerOpacity(sin, 'sinslider', 'OUTPUTsin');
+        layerZIndex(sin, 'sinzIndex', 'OUTPUTsin');
+        getElementInfo("layerInfo", sin);
+    } else {
+        map.removeLayer(sin);
+    }
+});
