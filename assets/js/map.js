@@ -105,6 +105,7 @@ function getElementInfo(elementID, layerName){
 
           }
           // console.log(tableDefinition);
+          modalBodyId.innerHTML = ""; // Clear previous contents
           modalBodyId.appendChild(tableDefinition);
 
         }
