@@ -278,3 +278,153 @@ $('#agea2001').on('change', function() {
         map.removeLayer(agea2001);
     }
 });
+
+var ctrn2004 = new ol.layer.Tile();
+$('#ctrn2004').on('change', function() {
+    let isChecked = $(this).is(':checked');
+    if (isChecked) {
+
+        fetch(wmtsSource + '?SERVICE=WMTS&request=GetCapabilities')
+          .then(function (response) {
+            return response.text();
+          })
+          .then(function (text) {
+            var result = new ol.format.WMTSCapabilities().read(text);
+            var options = ol.source.WMTS.optionsFromCapabilities(result, {
+              layer: 'raster:2004_CTRN',
+            });
+            ctrn2004.setSource(new ol.source.WMTS(options));
+          });
+
+        map.addLayer(ctrn2004);
+        layerOpacity(ctrn2004, 'ctrn2004slider', 'OUTPUTctrn2004');
+        layerZIndex(ctrn2004, 'ctrn2004zIndex', 'OUTPUTctrn2004');
+    } else {
+        map.removeLayer(ctrn2004);
+    }
+});
+
+var orca2004_5 = new ol.layer.Tile();
+$('#orca2004_5').on('change', function() {
+    let isChecked = $(this).is(':checked');
+    if (isChecked) {
+
+        fetch(wmtsSource + '?SERVICE=WMTS&request=GetCapabilities')
+          .then(function (response) {
+            return response.text();
+          })
+          .then(function (text) {
+            var result = new ol.format.WMTSCapabilities().read(text);
+            var options = ol.source.WMTS.optionsFromCapabilities(result, {
+              layer: 'raster:2004-5_ORCA',
+            });
+            orca2004_5.setSource(new ol.source.WMTS(options));
+          });
+
+        map.addLayer(orca2004_5);
+        layerOpacity(orca2004_5, 'orca2004_5slider', 'OUTPUTorca2004_5');
+        layerZIndex(orca2004_5, 'orca2004_5zIndex', 'OUTPUTorca2004_5');
+    } else {
+        map.removeLayer(orca2004_5);
+    }
+});
+
+var agea2006 = new ol.layer.Tile();
+$('#agea2006').on('change', function() {
+    let isChecked = $(this).is(':checked');
+    if (isChecked) {
+
+        fetch(wmtsSource + '?SERVICE=WMTS&request=GetCapabilities')
+          .then(function (response) {
+            return response.text();
+          })
+          .then(function (text) {
+            var result = new ol.format.WMTSCapabilities().read(text);
+            var options = ol.source.WMTS.optionsFromCapabilities(result, {
+              layer: 'raster:2006_AGEA',
+            });
+            agea2006.setSource(new ol.source.WMTS(options));
+          });
+
+        map.addLayer(agea2006);
+        layerOpacity(agea2006, 'agea2006slider', 'OUTPUTagea2006');
+        layerZIndex(agea2006, 'agea2006zIndex', 'OUTPUTagea2006');
+    } else {
+        map.removeLayer(agea2006);
+    }
+});
+
+var avioriprese2007 = new ol.layer.Tile();
+$('#avioriprese2007').on('change', function() {
+    let isChecked = $(this).is(':checked');
+    if (isChecked) {
+
+        fetch(wmtsSource + '?SERVICE=WMTS&request=GetCapabilities')
+          .then(function (response) {
+            return response.text();
+          })
+          .then(function (text) {
+            var result = new ol.format.WMTSCapabilities().read(text);
+            var options = ol.source.WMTS.optionsFromCapabilities(result, {
+              layer: 'raster:2007_AVIORIPRESE',
+            });
+            avioriprese2007.setSource(new ol.source.WMTS(options));
+          });
+
+        map.addLayer(avioriprese2007);
+        layerOpacity(avioriprese2007, 'avioriprese2007slider', 'OUTPUTavioriprese2007');
+        layerZIndex(avioriprese2007, 'avioriprese2007zIndex', 'OUTPUTavioriprese2007');
+    } else {
+        map.removeLayer(avioriprese2007);
+    }
+});
+
+var agea2008 = new ol.layer.Tile();
+$('#agea2008').on('change', function() {
+    let isChecked = $(this).is(':checked');
+    if (isChecked) {
+
+        fetch(wmtsSource + '?SERVICE=WMTS&request=GetCapabilities')
+          .then(function (response) {
+            return response.text();
+          })
+          .then(function (text) {
+            var result = new ol.format.WMTSCapabilities().read(text);
+            var options = ol.source.WMTS.optionsFromCapabilities(result, {
+              layer: 'raster:2008_AGEA',
+            });
+            agea2008.setSource(new ol.source.WMTS(options));
+          });
+
+        map.addLayer(agea2008);
+        layerOpacity(agea2008, 'agea2008slider', 'OUTPUTagea2008');
+        layerZIndex(agea2008, 'agea2008zIndex', 'OUTPUTagea2008');
+    } else {
+        map.removeLayer(agea2008);
+    }
+});
+
+var agea2011 = new ol.layer.Tile();
+$('#agea2011').on('change', function() {
+    let isChecked = $(this).is(':checked');
+    if (isChecked) {
+
+        fetch(wmtsSource + '?SERVICE=WMTS&request=GetCapabilities')
+          .then(function (response) {
+            return response.text();
+          })
+          .then(function (text) {
+            var result = new ol.format.WMTSCapabilities().read(text);
+            var options = ol.source.WMTS.optionsFromCapabilities(result, {
+              layer: 'raster:2011_AGEA',
+            });
+            agea2011.setSource(new ol.source.WMTS(options));
+          });
+
+        map.addLayer(agea2011);
+        layerOpacity(agea2011, 'agea2011slider', 'OUTPUTagea2011');
+        layerZIndex(agea2011, 'agea2011zIndex', 'OUTPUTagea2011');
+    } else {
+        map.removeLayer(agea2011);
+    }
+});
