@@ -4,31 +4,6 @@ ol.proj.proj4.register(proj4);
 
 var wmtsSource = 'http://sit.cittametropolitana.na.it/geoserver/gwc/service/wmts'
 
-var raster2021 = new ol.layer.Tile();
-$('#raster2021').on('change', function() {
-    let isChecked = $(this).is(':checked');
-    if (isChecked) {
-
-        fetch(wmtsSource + '?SERVICE=WMTS&request=GetCapabilities')
-          .then(function (response) {
-            return response.text();
-          })
-          .then(function (text) {
-            var result = new ol.format.WMTSCapabilities().read(text);
-            var options = ol.source.WMTS.optionsFromCapabilities(result, {
-              layer: 'raster:2021_Worldview3_RGB',
-            });
-            raster2021.setSource(new ol.source.WMTS(options));
-          });
-
-        map.addLayer(raster2021);
-        layerOpacity(raster2021, 'raster2021slider', 'OUTPUTraster2021');
-        layerZIndex(raster2021, 'raster2021zIndex', 'OUTPUTraster2021');
-    } else {
-        map.removeLayer(raster2021);
-    }
-});
-
 var igm1860 = new ol.layer.Tile();
 $('#igm1860').on('change', function() {
     let isChecked = $(this).is(':checked');
@@ -451,5 +426,155 @@ $('#ctr2011').on('change', function() {
         layerZIndex(ctr2011, 'ctr2011zIndex', 'OUTPUTctr2011');
     } else {
         map.removeLayer(ctr2011);
+    }
+});
+
+var agea2014 = new ol.layer.Tile();
+$('#agea2014').on('change', function() {
+    let isChecked = $(this).is(':checked');
+    if (isChecked) {
+
+        fetch(wmtsSource + '?SERVICE=WMTS&request=GetCapabilities')
+          .then(function (response) {
+            return response.text();
+          })
+          .then(function (text) {
+            var result = new ol.format.WMTSCapabilities().read(text);
+            var options = ol.source.WMTS.optionsFromCapabilities(result, {
+              layer: 'raster:2014_AGEA',
+            });
+            agea2014.setSource(new ol.source.WMTS(options));
+          });
+
+        map.addLayer(agea2014);
+        layerOpacity(agea2014, 'agea2014slider', 'OUTPUTagea2014');
+        layerZIndex(agea2014, 'agea2014zIndex', 'OUTPUTagea2014');
+    } else {
+        map.removeLayer(agea2014);
+    }
+});
+
+var agea2017 = new ol.layer.Tile();
+$('#agea2017').on('change', function() {
+    let isChecked = $(this).is(':checked');
+    if (isChecked) {
+
+        fetch(wmtsSource + '?SERVICE=WMTS&request=GetCapabilities')
+          .then(function (response) {
+            return response.text();
+          })
+          .then(function (text) {
+            var result = new ol.format.WMTSCapabilities().read(text);
+            var options = ol.source.WMTS.optionsFromCapabilities(result, {
+              layer: 'raster:2017_AGEA',
+            });
+            agea2017.setSource(new ol.source.WMTS(options));
+          });
+
+        map.addLayer(agea2017);
+        layerOpacity(agea2017, 'agea2017slider', 'OUTPUTagea2017');
+        layerZIndex(agea2017, 'agea2017zIndex', 'OUTPUTagea2017');
+    } else {
+        map.removeLayer(agea2017);
+    }
+});
+
+var pleiades2018 = new ol.layer.Tile();
+$('#pleiades2018').on('change', function() {
+    let isChecked = $(this).is(':checked');
+    if (isChecked) {
+
+        fetch(wmtsSource + '?SERVICE=WMTS&request=GetCapabilities')
+          .then(function (response) {
+            return response.text();
+          })
+          .then(function (text) {
+            var result = new ol.format.WMTSCapabilities().read(text);
+            var options = ol.source.WMTS.optionsFromCapabilities(result, {
+              layer: 'raster:2018_Pleaides_rgb',
+            });
+            pleiades2018.setSource(new ol.source.WMTS(options));
+          });
+
+        map.addLayer(pleiades2018);
+        layerOpacity(pleiades2018, 'pleiades2018slider', 'OUTPUTpleiades2018');
+        layerZIndex(pleiades2018, 'pleiades2018zIndex', 'OUTPUTpleiades2018');
+    } else {
+        map.removeLayer(pleiades2018);
+    }
+});
+
+var worldview3_2019 = new ol.layer.Tile();
+$('#worldview3_2019').on('change', function() {
+    let isChecked = $(this).is(':checked');
+    if (isChecked) {
+
+        fetch(wmtsSource + '?SERVICE=WMTS&request=GetCapabilities')
+          .then(function (response) {
+            return response.text();
+          })
+          .then(function (text) {
+            var result = new ol.format.WMTSCapabilities().read(text);
+            var options = ol.source.WMTS.optionsFromCapabilities(result, {
+              layer: 'raster:2019_Worldview3_rgb',
+            });
+            worldview3_2019.setSource(new ol.source.WMTS(options));
+          });
+
+        map.addLayer(worldview3_2019);
+        layerOpacity(worldview3_2019, 'worldview3_2019slider', 'OUTPUTworldview3_2019');
+        layerZIndex(worldview3_2019, 'worldview3_2019zIndex', 'OUTPUTworldview3_2019');
+    } else {
+        map.removeLayer(worldview3_2019);
+    }
+});
+
+var pleiades2020 = new ol.layer.Tile();
+$('#pleiades2020').on('change', function() {
+    let isChecked = $(this).is(':checked');
+    if (isChecked) {
+
+        fetch(wmtsSource + '?SERVICE=WMTS&request=GetCapabilities')
+          .then(function (response) {
+            return response.text();
+          })
+          .then(function (text) {
+            var result = new ol.format.WMTSCapabilities().read(text);
+            var options = ol.source.WMTS.optionsFromCapabilities(result, {
+              layer: 'raster:2020_Pleiades-Superview1_RGB',
+            });
+            pleiades2020.setSource(new ol.source.WMTS(options));
+          });
+
+        map.addLayer(pleiades2020);
+        layerOpacity(pleiades2020, 'pleiades2020slider', 'OUTPUTpleiades2020');
+        layerZIndex(pleiades2020, 'pleiades2020zIndex', 'OUTPUTpleiades2020');
+    } else {
+        map.removeLayer(pleiades2020);
+    }
+});
+
+var raster2021 = new ol.layer.Tile();
+$('#raster2021').on('change', function() {
+    let isChecked = $(this).is(':checked');
+    if (isChecked) {
+
+        fetch(wmtsSource + '?SERVICE=WMTS&request=GetCapabilities')
+          .then(function (response) {
+            return response.text();
+          })
+          .then(function (text) {
+            var result = new ol.format.WMTSCapabilities().read(text);
+            var options = ol.source.WMTS.optionsFromCapabilities(result, {
+              layer: 'raster:2021_Worldview3_RGB',
+            });
+            raster2021.setSource(new ol.source.WMTS(options));
+          });
+
+        map.addLayer(raster2021);
+        layerOpacity(raster2021, 'raster2021slider', 'OUTPUTraster2021');
+        layerZIndex(raster2021, 'raster2021zIndex', 'OUTPUTraster2021');
+    } else {
+        map.removeLayer(raster2021);
     }
 });
