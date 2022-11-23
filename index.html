@@ -1889,6 +1889,36 @@
 
                     <div class="control-box">
                         <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" name="switch-basemap" id="ctr2011">
+                            <label class="custom-control-label" for="ctr2011">CMN - CTR 2011</label>
+                        </div>
+                        <div class="text-end">
+                            <a class="item-controls" data-bs-toggle="collapse" href="#ctr2011controls"
+                                role="button" aria-expanded="false" aria-controls="ctr2011controls"
+                                data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
+                                <i class="fas fa-cogs"></i>
+                            </a>
+                            <div class="collapse" id="ctr2011controls">
+                              <div class="slider-container">
+                                <input type="range" class="form-range"
+                                        min="0" max="100" value="100" id="ctr2011slider">
+                                <label class="">Trasparenza: <span id="OUTPUTctr2011"></span> %</label>
+                              </div>
+                              <div class="counter-container">
+                                <div class="counter" id="">
+                                  <input class="counter-object" id="ctr2011zIndex"
+                                          type="number" name="zIndex" min="0" max="99" step="1"
+                                          placeholder="0"
+                                          value="0">
+                                </div>
+                                <label class="">z-Index</label>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="control-box">
+                        <div class="custom-control custom-switch">
                             <input type="checkbox" class="custom-control-input" name="switch-basemap" id="raster2021">
                             <label class="custom-control-label" for="raster2021">CMN - 2021 WorldView3</label>
                         </div>

@@ -428,3 +428,28 @@ $('#agea2011').on('change', function() {
         map.removeLayer(agea2011);
     }
 });
+
+var ctr2011 = new ol.layer.Tile();
+$('#ctr2011').on('change', function() {
+    let isChecked = $(this).is(':checked');
+    if (isChecked) {
+
+        fetch(wmtsSource + '?SERVICE=WMTS&request=GetCapabilities')
+          .then(function (response) {
+            return response.text();
+          })
+          .then(function (text) {
+            var result = new ol.format.WMTSCapabilities().read(text);
+            var options = ol.source.WMTS.optionsFromCapabilities(result, {
+              layer: 'raster:2011_CTR_5k',
+            });
+            ctr2011.setSource(new ol.source.WMTS(options));
+          });
+
+        map.addLayer(ctr2011);
+        layerOpacity(ctr2011, 'ctr2011slider', 'OUTPUTctr2011');
+        layerZIndex(ctr2011, 'ctr2011zIndex', 'OUTPUTctr2011');
+    } else {
+        map.removeLayer(ctr2011);
+    }
+});
