@@ -7,7 +7,7 @@ var confineComunale = new ol.layer.Tile({
     source: new ol.source.TileWMS({
     url: wmsSourceStabiae,
     params: {
-        'LAYERS': 'confine_comunale',
+        'LAYERS': 'confine_comunale_istat2021',
         //'STYLES': null,
     }
     }),
@@ -257,7 +257,7 @@ var dsmLidar = new ol.layer.Tile({
     source: new ol.source.TileWMS({
     url: wmsSourceStabiae,
     params: {
-        'LAYERS': 'dsm_lidar_1m',
+        'LAYERS': 'dsm_1m',
         //'STYLES': 'CLC2018',
     }
     }),
@@ -283,7 +283,7 @@ var dtmLidar = new ol.layer.Tile({
     source: new ol.source.TileWMS({
     url: wmsSourceStabiae,
     params: {
-        'LAYERS': 'dtm_lidar_1m',
+        'LAYERS': 'dtm_1m',
         //'STYLES': 'CLC2018',
     }
     }),
