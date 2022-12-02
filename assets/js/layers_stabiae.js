@@ -20,7 +20,7 @@ var antenne = new ol.layer.Tile({
     source: new ol.source.TileWMS({
     url: wmsSourceStabiae,
     params: {
-        'LAYERS': 'antenne',
+        'LAYERS': 'Antenne',
         //'STYLES': null,
     }
     }),
@@ -46,7 +46,7 @@ var reteTelefonica = new ol.layer.Tile({
     source: new ol.source.TileWMS({
     url: wmsSourceStabiae,
     params: {
-        'LAYERS': 'rete_telefonica',
+        'LAYERS': 'Rete_Infr_telefonica',
         //'STYLES': 'CLC2018',
     }
     }),
@@ -72,7 +72,7 @@ var collettoreFognario = new ol.layer.Tile({
     source: new ol.source.TileWMS({
     url: wmsSourceStabiae,
     params: {
-        'LAYERS': 'collettore_fognario',
+        'LAYERS': 'Rete_Fognatura_Collettori',
         //'STYLES': 'CLC2018',
     }
     }),
@@ -98,7 +98,7 @@ var depuratore = new ol.layer.Tile({
     source: new ol.source.TileWMS({
     url: wmsSourceStabiae,
     params: {
-        'LAYERS': 'depuratore',
+        'LAYERS': 'Depuratore',
         //'STYLES': 'CLC2018',
     }
     }),
@@ -124,7 +124,7 @@ var elettrodottoLocale = new ol.layer.Tile({
     source: new ol.source.TileWMS({
     url: wmsSourceStabiae,
     params: {
-        'LAYERS': 'elettrodotto_locale',
+        'LAYERS': 'Rete_Elettrodotti',
         //'STYLES': 'CLC2018',
     }
     }),
@@ -150,7 +150,7 @@ var retePubblicaIlluminazione = new ol.layer.Tile({
     source: new ol.source.TileWMS({
     url: wmsSourceStabiae,
     params: {
-        'LAYERS': 'rete_pubblica_illuminazione',
+        'LAYERS': 'Rete_Pubb_illuminazione',
         //'STYLES': 'CLC2018',
     }
     }),
@@ -202,7 +202,7 @@ var dividenteDemaniale = new ol.layer.Tile({
     source: new ol.source.TileWMS({
     url: wmsSourceStabiae,
     params: {
-        'LAYERS': 'dividente_demaniale',
+        'LAYERS': 'Dividente_demaniale',
         //'STYLES': 'CLC2018',
     }
     }),
