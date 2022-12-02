@@ -1,7 +1,4 @@
 // List of layers and relative functionalities
-// var mainUrl = 'http://0.0.0.0:8300/geoserver/'
-// var workspace = 'CastellammarediStabia'
-// var wmsSourceStabiae = mainUrl + workspace +'/wms'
 
 var confineComunale = new ol.layer.Tile({
     source: new ol.source.TileWMS({
@@ -179,7 +176,7 @@ var edificiPubbliciCensiti = new ol.layer.Tile({
     source: new ol.source.TileWMS({
     url: wmsSourceStabiae,
     params: {
-        'LAYERS': 'edifici_pubblici_censiti',
+        'LAYERS': 'stima_produzione_da_fotovoltaico',
         //'STYLES': 'CLC2018',
     }
     }),
