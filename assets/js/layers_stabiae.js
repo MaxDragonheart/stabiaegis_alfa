@@ -5,7 +5,6 @@ var confineComunale = new ol.layer.Tile({
     url: wmsSourceStabiae,
     params: {
         'LAYERS': 'confine_comunale_istat2021',
-        //'STYLES': null,
     }
     }),
     minZoom: 0,
@@ -14,14 +13,12 @@ var confineComunale = new ol.layer.Tile({
     opacity: 1.00
 });
 map.addLayer(confineComunale);
-// getElementInfo(""layerInfo"", confineComunale);
 
 var antenne = new ol.layer.Tile({
     source: new ol.source.TileWMS({
     url: wmsSourceStabiae,
     params: {
         'LAYERS': 'Antenne',
-        //'STYLES': null,
     }
     }),
     minZoom: 0,
@@ -47,7 +44,6 @@ var reteTelefonica = new ol.layer.Tile({
     url: wmsSourceStabiae,
     params: {
         'LAYERS': 'Rete_Infr_telefonica',
-        //'STYLES': 'CLC2018',
     }
     }),
     minZoom: 0,
@@ -73,7 +69,6 @@ var collettoreFognario = new ol.layer.Tile({
     url: wmsSourceStabiae,
     params: {
         'LAYERS': 'Rete_Fognatura_Collettori',
-        //'STYLES': 'CLC2018',
     }
     }),
     minZoom: 0,
@@ -99,7 +94,6 @@ var depuratore = new ol.layer.Tile({
     url: wmsSourceStabiae,
     params: {
         'LAYERS': 'Depuratore',
-        //'STYLES': 'CLC2018',
     }
     }),
     minZoom: 0,
@@ -125,7 +119,6 @@ var elettrodottoLocale = new ol.layer.Tile({
     url: wmsSourceStabiae,
     params: {
         'LAYERS': 'Rete_Elettrodotti',
-        //'STYLES': 'CLC2018',
     }
     }),
     minZoom: 0,
@@ -151,7 +144,6 @@ var retePubblicaIlluminazione = new ol.layer.Tile({
     url: wmsSourceStabiae,
     params: {
         'LAYERS': 'Rete_Pubb_illuminazione',
-        //'STYLES': 'CLC2018',
     }
     }),
     minZoom: 0,
@@ -177,7 +169,6 @@ var edificiPubbliciCensiti = new ol.layer.Tile({
     url: wmsSourceStabiae,
     params: {
         'LAYERS': 'stima_produzione_da_fotovoltaico',
-        //'STYLES': 'CLC2018',
     }
     }),
     minZoom: 0,
@@ -203,7 +194,6 @@ var dividenteDemaniale = new ol.layer.Tile({
     url: wmsSourceStabiae,
     params: {
         'LAYERS': 'Dividente_demaniale',
-        //'STYLES': 'CLC2018',
     }
     }),
     minZoom: 0,
@@ -229,7 +219,6 @@ var proprietaPubbliche = new ol.layer.Tile({
     url: wmsSourceStabiae,
     params: {
         'LAYERS': 'proprieta_pubbliche',
-        //'STYLES': 'CLC2018',
     }
     }),
     minZoom: 0,
@@ -255,7 +244,6 @@ var dsmLidar = new ol.layer.Tile({
     url: wmsSourceStabiae,
     params: {
         'LAYERS': 'dsm_1m',
-        //'STYLES': 'CLC2018',
     }
     }),
     minZoom: 0,
@@ -281,7 +269,6 @@ var dtmLidar = new ol.layer.Tile({
     url: wmsSourceStabiae,
     params: {
         'LAYERS': 'dtm_1m',
-        //'STYLES': 'CLC2018',
     }
     }),
     minZoom: 0,
@@ -307,7 +294,6 @@ var alberiMonumentali = new ol.layer.Tile({
     url: wmsSourceStabiae,
     params: {
         'LAYERS': 'Alberi_monumentali',
-        //'STYLES': 'CLC2018',
     }
     }),
     minZoom: 0,
@@ -333,7 +319,6 @@ var mareggiate = new ol.layer.Tile({
     url: wmsSourceStabiae,
     params: {
         'LAYERS': 'Aree_attenzione_mareggiate',
-        //'STYLES': 'CLC2018',
     }
     }),
     minZoom: 0,
@@ -359,7 +344,6 @@ var areeBoscate = new ol.layer.Tile({
     url: wmsSourceStabiae,
     params: {
         'LAYERS': 'Aree_boscate',
-        //'STYLES': 'CLC2018',
     }
     }),
     minZoom: 0,
@@ -385,7 +369,6 @@ var beniReligiosi = new ol.layer.Tile({
     url: wmsSourceStabiae,
     params: {
         'LAYERS': 'Beni_Religiosi',
-        //'STYLES': 'CLC2018',
     }
     }),
     minZoom: 0,
@@ -403,5 +386,105 @@ $('#beniReligiosi').on('change', function() {
         getElementInfo("layerInfo", beniReligiosi);
     } else {
         map.removeLayer(beniReligiosi);
+    }
+});
+
+var interesseStoricoArtistico = new ol.layer.Tile({
+    source: new ol.source.TileWMS({
+    url: wmsSourceStabiae,
+    params: {
+        'LAYERS': 'Beni_di_interesse_storico_artistico',
+    }
+    }),
+    minZoom: 0,
+    maxZoom: 28,
+    zIndex: 1,
+    opacity: 1.00
+});
+$('#interesseStoricoArtistico').on('change', function() {
+    let isChecked = $(this).is(':checked');
+    if (isChecked) {
+        map.addLayer(interesseStoricoArtistico);
+        getElementLegendImg('legendinteresseStoricoArtistico', interesseStoricoArtistico, wmsSourceStabiae, 'Beni_di_interesse_storico_artistico');
+        layerOpacity(interesseStoricoArtistico, 'interesseStoricoArtisticoslider', 'OUTPUTinteresseStoricoArtistico');
+        layerZIndex(interesseStoricoArtistico, 'interesseStoricoArtisticozIndex', 'OUTPUTinteresseStoricoArtistico');
+        getElementInfo("layerInfo", interesseStoricoArtistico);
+    } else {
+        map.removeLayer(interesseStoricoArtistico);
+    }
+});
+
+var prgVigente = new ol.layer.Tile({
+    source: new ol.source.TileWMS({
+    url: wmsSourceStabiae,
+    params: {
+        'LAYERS': 'PRG_vigente_2007',
+    }
+    }),
+    minZoom: 0,
+    maxZoom: 28,
+    zIndex: 1,
+    opacity: 1.00
+});
+$('#prgVigente').on('change', function() {
+    let isChecked = $(this).is(':checked');
+    if (isChecked) {
+        map.addLayer(prgVigente);
+        getElementLegendImg('legendprgVigente', prgVigente, wmsSourceStabiae, 'PRG_vigente_2007');
+        layerOpacity(prgVigente, 'prgVigenteslider', 'OUTPUTprgVigente');
+        layerZIndex(prgVigente, 'prgVigentezIndex', 'OUTPUTprgVigente');
+        getElementInfo("layerInfo", prgVigente);
+    } else {
+        map.removeLayer(prgVigente);
+    }
+});
+
+var pucProposta = new ol.layer.Tile({
+    source: new ol.source.TileWMS({
+    url: wmsSourceStabiae,
+    params: {
+        'LAYERS': 'Proposta_PUC_CdS_2022',
+    }
+    }),
+    minZoom: 0,
+    maxZoom: 28,
+    zIndex: 1,
+    opacity: 1.00
+});
+$('#pucProposta').on('change', function() {
+    let isChecked = $(this).is(':checked');
+    if (isChecked) {
+        map.addLayer(pucProposta);
+        getElementLegendImg('legendpucProposta', pucProposta, wmsSourceStabiae, 'Proposta_PUC_CdS_2022');
+        layerOpacity(pucProposta, 'pucPropostaslider', 'OUTPUTpucProposta');
+        layerZIndex(pucProposta, 'pucPropostazIndex', 'OUTPUTpucProposta');
+        getElementInfo("layerInfo", pucProposta);
+    } else {
+        map.removeLayer(pucProposta);
+    }
+});
+
+var beniVincolati = new ol.layer.Tile({
+    source: new ol.source.TileWMS({
+    url: wmsSourceStabiae,
+    params: {
+        'LAYERS': 'Beni_vincolati',
+    }
+    }),
+    minZoom: 0,
+    maxZoom: 28,
+    zIndex: 1,
+    opacity: 1.00
+});
+$('#beniVincolati').on('change', function() {
+    let isChecked = $(this).is(':checked');
+    if (isChecked) {
+        map.addLayer(beniVincolati);
+        getElementLegendImg('legendbeniVincolati', beniVincolati, wmsSourceStabiae, 'Beni_vincolati');
+        layerOpacity(beniVincolati, 'beniVincolatislider', 'OUTPUTbeniVincolati');
+        layerZIndex(beniVincolati, 'beniVincolatizIndex', 'OUTPUTbeniVincolati');
+        getElementInfo("layerInfo", beniVincolati);
+    } else {
+        map.removeLayer(beniVincolati);
     }
 });
