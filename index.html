@@ -382,36 +382,36 @@
                         </div>
                     </div>
 
-<!--                    <div class="control-box">
+                    <div class="control-box">
                         <div class="custom-control custom-switch">
-                            <input type="checkbox" class="custom-control-input" name="switch-basemap" id="proprietaPubbliche">
-                            <label class="custom-control-label" for="proprietaPubbliche">Proprietà Pubbliche</label>
+                            <input type="checkbox" class="custom-control-input" name="switch-basemap" id="alberiMonumentali">
+                            <label class="custom-control-label" for="alberiMonumentali">Alberi Monumentali</label>
                         </div>
                         <div class="text-end">
-                            <a class="item-legend" data-bs-toggle="collapse" href="#proprietaPubblichelegend"
-                                role="button" aria-expanded="false" aria-controls="proprietaPubblichelegend"
+                            <a class="item-legend" data-bs-toggle="collapse" href="#alberiMonumentalilegend"
+                                role="button" aria-expanded="false" aria-controls="alberiMonumentalilegend"
                                 data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
                                 <i class="fas fa-book"></i>
                             </a>
-                            <div class="collapse" id="proprietaPubblichelegend">
-                              <div id="legendproprietaPubbliche"></div>
+                            <div class="collapse" id="alberiMonumentalilegend">
+                              <div id="legendalberiMonumentali"></div>
                             </div>
                         </div>
                         <div class="text-end">
-                            <a class="item-controls" data-bs-toggle="collapse" href="#proprietaPubblichecontrols"
-                                role="button" aria-expanded="false" aria-controls="proprietaPubblichecontrols"
+                            <a class="item-controls" data-bs-toggle="collapse" href="#alberiMonumentalicontrols"
+                                role="button" aria-expanded="false" aria-controls="alberiMonumentalicontrols"
                                 data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
                                 <i class="fas fa-cogs"></i>
                             </a>
-                            <div class="collapse" id="proprietaPubblichecontrols">
+                            <div class="collapse" id="alberiMonumentalicontrols">
                               <div class="slider-container">
                                 <input type="range" class="form-range"
-                                        min="0" max="100" value="100" id="proprietaPubblicheslider">
-                                <label class="">Trasparenza: <span id="OUTPUTproprietaPubbliche"></span> %</label>
+                                        min="0" max="100" value="100" id="alberiMonumentalislider">
+                                <label class="">Trasparenza: <span id="OUTPUTalberiMonumentali"></span> %</label>
                               </div>
                               <div class="counter-container">
                                 <div class="counter" id="">
-                                  <input class="counter-object" id="proprietaPubblichezIndex"
+                                  <input class="counter-object" id="alberiMonumentalizIndex"
                                           type="number" name="zIndex" min="0" max="99" step="1"
                                           placeholder="0"
                                           value="0">
@@ -420,7 +420,128 @@
                               </div>
                             </div>
                         </div>
-                    </div>-->
+                    </div>
+
+                    <div class="control-box">
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" name="switch-basemap" id="mareggiate">
+                            <label class="custom-control-label" for="mareggiate">Aree attenzionate per mareggiate</label>
+                        </div>
+                        <div class="text-end">
+                            <a class="item-legend" data-bs-toggle="collapse" href="#mareggiatelegend"
+                                role="button" aria-expanded="false" aria-controls="mareggiatelegend"
+                                data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
+                                <i class="fas fa-book"></i>
+                            </a>
+                            <div class="collapse" id="mareggiatelegend">
+                              <div id="legendmareggiate"></div>
+                            </div>
+                        </div>
+                        <div class="text-end">
+                            <a class="item-controls" data-bs-toggle="collapse" href="#mareggiatecontrols"
+                                role="button" aria-expanded="false" aria-controls="mareggiatecontrols"
+                                data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
+                                <i class="fas fa-cogs"></i>
+                            </a>
+                            <div class="collapse" id="mareggiatecontrols">
+                              <div class="slider-container">
+                                <input type="range" class="form-range"
+                                        min="0" max="100" value="100" id="mareggiateslider">
+                                <label class="">Trasparenza: <span id="OUTPUTmareggiate"></span> %</label>
+                              </div>
+                              <div class="counter-container">
+                                <div class="counter" id="">
+                                  <input class="counter-object" id="mareggiatezIndex"
+                                          type="number" name="zIndex" min="0" max="99" step="1"
+                                          placeholder="0"
+                                          value="0">
+                                </div>
+                                <label class="">z-Index</label>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="control-box">
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" name="switch-basemap" id="areeBoscate">
+                            <label class="custom-control-label" for="areeBoscate">Aree Boscate</label>
+                        </div>
+                        <div class="text-end">
+                            <a class="item-legend" data-bs-toggle="collapse" href="#areeBoscatelegend"
+                                role="button" aria-expanded="false" aria-controls="areeBoscatelegend"
+                                data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
+                                <i class="fas fa-book"></i>
+                            </a>
+                            <div class="collapse" id="areeBoscatelegend">
+                              <div id="legendareeBoscate"></div>
+                            </div>
+                        </div>
+                        <div class="text-end">
+                            <a class="item-controls" data-bs-toggle="collapse" href="#areeBoscatecontrols"
+                                role="button" aria-expanded="false" aria-controls="areeBoscatecontrols"
+                                data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
+                                <i class="fas fa-cogs"></i>
+                            </a>
+                            <div class="collapse" id="areeBoscatecontrols">
+                              <div class="slider-container">
+                                <input type="range" class="form-range"
+                                        min="0" max="100" value="100" id="areeBoscateslider">
+                                <label class="">Trasparenza: <span id="OUTPUTareeBoscate"></span> %</label>
+                              </div>
+                              <div class="counter-container">
+                                <div class="counter" id="">
+                                  <input class="counter-object" id="areeBoscatezIndex"
+                                          type="number" name="zIndex" min="0" max="99" step="1"
+                                          placeholder="0"
+                                          value="0">
+                                </div>
+                                <label class="">z-Index</label>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="control-box">
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" name="switch-basemap" id="beniReligiosi">
+                            <label class="custom-control-label" for="beniReligiosi">Beni religiosi</label>
+                        </div>
+                        <div class="text-end">
+                            <a class="item-legend" data-bs-toggle="collapse" href="#beniReligiosilegend"
+                                role="button" aria-expanded="false" aria-controls="beniReligiosilegend"
+                                data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
+                                <i class="fas fa-book"></i>
+                            </a>
+                            <div class="collapse" id="beniReligiosilegend">
+                              <div id="legendbeniReligiosi"></div>
+                            </div>
+                        </div>
+                        <div class="text-end">
+                            <a class="item-controls" data-bs-toggle="collapse" href="#beniReligiosicontrols"
+                                role="button" aria-expanded="false" aria-controls="beniReligiosicontrols"
+                                data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
+                                <i class="fas fa-cogs"></i>
+                            </a>
+                            <div class="collapse" id="beniReligiosicontrols">
+                              <div class="slider-container">
+                                <input type="range" class="form-range"
+                                        min="0" max="100" value="100" id="beniReligiosislider">
+                                <label class="">Trasparenza: <span id="OUTPUTbeniReligiosi"></span> %</label>
+                              </div>
+                              <div class="counter-container">
+                                <div class="counter" id="">
+                                  <input class="counter-object" id="beniReligiosizIndex"
+                                          type="number" name="zIndex" min="0" max="99" step="1"
+                                          placeholder="0"
+                                          value="0">
+                                </div>
+                                <label class="">z-Index</label>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+
 
                   </div>
                 </div>

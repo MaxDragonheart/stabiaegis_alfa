@@ -33,7 +33,7 @@ $('#antenne').on('change', function() {
     let isChecked = $(this).is(':checked');
     if (isChecked) {
         map.addLayer(antenne);
-        getElementLegendImg('legendantenne', antenne, wmsSourceStabiae, 'antenne');
+        getElementLegendImg('legendantenne', antenne, wmsSourceStabiae, 'Antenne');
         layerOpacity(antenne, 'antenneslider', 'OUTPUTantenne');
         layerZIndex(antenne, 'antennezIndex', 'OUTPUTantenne');
         getElementInfo("layerInfo", antenne);
@@ -59,7 +59,7 @@ $('#reteTelefonica').on('change', function() {
     let isChecked = $(this).is(':checked');
     if (isChecked) {
         map.addLayer(reteTelefonica);
-        getElementLegendImg('legendreteTelefonica', reteTelefonica, wmsSourceStabiae, 'rete_telefonica');
+        getElementLegendImg('legendreteTelefonica', reteTelefonica, wmsSourceStabiae, 'Rete_Infr_telefonica');
         layerOpacity(reteTelefonica, 'reteTelefonicaslider', 'OUTPUTreteTelefonica');
         layerZIndex(reteTelefonica, 'reteTelefonicazIndex', 'OUTPUTreteTelefonica');
         getElementInfo("layerInfo", reteTelefonica);
@@ -85,7 +85,7 @@ $('#collettoreFognario').on('change', function() {
     let isChecked = $(this).is(':checked');
     if (isChecked) {
         map.addLayer(collettoreFognario);
-        getElementLegendImg('legendcollettoreFognario', collettoreFognario, wmsSourceStabiae, 'collettore_fognario');
+        getElementLegendImg('legendcollettoreFognario', collettoreFognario, wmsSourceStabiae, 'Rete_Fognatura_Collettori');
         layerOpacity(collettoreFognario, 'collettoreFognarioslider', 'OUTPUTcollettoreFognario');
         layerZIndex(collettoreFognario, 'collettoreFognariozIndex', 'OUTPUTcollettoreFognario');
         getElementInfo("layerInfo", collettoreFognario);
@@ -111,7 +111,7 @@ $('#depuratore').on('change', function() {
     let isChecked = $(this).is(':checked');
     if (isChecked) {
         map.addLayer(depuratore);
-        getElementLegendImg('legenddepuratore', depuratore, wmsSourceStabiae, 'depuratore');
+        getElementLegendImg('legenddepuratore', depuratore, wmsSourceStabiae, 'Depuratore');
         layerOpacity(depuratore, 'depuratoreslider', 'OUTPUTdepuratore');
         layerZIndex(depuratore, 'depuratorezIndex', 'OUTPUTdepuratore');
         getElementInfo("layerInfo", depuratore);
@@ -137,7 +137,7 @@ $('#elettrodottoLocale').on('change', function() {
     let isChecked = $(this).is(':checked');
     if (isChecked) {
         map.addLayer(elettrodottoLocale);
-        getElementLegendImg('legendelettrodottoLocale', elettrodottoLocale, wmsSourceStabiae, 'elettrodotto_locale');
+        getElementLegendImg('legendelettrodottoLocale', elettrodottoLocale, wmsSourceStabiae, 'Rete_Elettrodotti');
         layerOpacity(elettrodottoLocale, 'elettrodottoLocaleslider', 'OUTPUTelettrodottoLocale');
         layerZIndex(elettrodottoLocale, 'elettrodottoLocalezIndex', 'OUTPUTelettrodottoLocale');
         getElementInfo("layerInfo", elettrodottoLocale);
@@ -163,7 +163,7 @@ $('#retePubblicaIlluminazione').on('change', function() {
     let isChecked = $(this).is(':checked');
     if (isChecked) {
         map.addLayer(retePubblicaIlluminazione);
-        getElementLegendImg('legendretePubblicaIlluminazione', retePubblicaIlluminazione, wmsSourceStabiae, 'rete_pubblica_illuminazione');
+        getElementLegendImg('legendretePubblicaIlluminazione', retePubblicaIlluminazione, wmsSourceStabiae, 'Rete_Pubb_illuminazione');
         layerOpacity(retePubblicaIlluminazione, 'retePubblicaIlluminazioneslider', 'OUTPUTretePubblicaIlluminazione');
         layerZIndex(retePubblicaIlluminazione, 'retePubblicaIlluminazionezIndex', 'OUTPUTretePubblicaIlluminazione');
         getElementInfo("layerInfo", retePubblicaIlluminazione);
@@ -189,7 +189,7 @@ $('#edificiPubbliciCensiti').on('change', function() {
     let isChecked = $(this).is(':checked');
     if (isChecked) {
         map.addLayer(edificiPubbliciCensiti);
-        getElementLegendImg('legendedificiPubbliciCensiti', edificiPubbliciCensiti, wmsSourceStabiae, 'edifici_pubblici_censiti');
+        getElementLegendImg('legendedificiPubbliciCensiti', edificiPubbliciCensiti, wmsSourceStabiae, 'stima_produzione_da_fotovoltaico');
         layerOpacity(edificiPubbliciCensiti, 'edificiPubbliciCensitislider', 'OUTPUTedificiPubbliciCensiti');
         layerZIndex(edificiPubbliciCensiti, 'edificiPubbliciCensitizIndex', 'OUTPUTedificiPubbliciCensiti');
         getElementInfo("layerInfo", edificiPubbliciCensiti);
@@ -215,7 +215,7 @@ $('#dividenteDemaniale').on('change', function() {
     let isChecked = $(this).is(':checked');
     if (isChecked) {
         map.addLayer(dividenteDemaniale);
-        getElementLegendImg('legenddividenteDemaniale', dividenteDemaniale, wmsSourceStabiae, 'dividente_demaniale');
+        getElementLegendImg('legenddividenteDemaniale', dividenteDemaniale, wmsSourceStabiae, 'Dividente_demaniale');
         layerOpacity(dividenteDemaniale, 'dividenteDemanialeslider', 'OUTPUTdividenteDemaniale');
         layerZIndex(dividenteDemaniale, 'dividenteDemanialezIndex', 'OUTPUTdividenteDemaniale');
         getElementInfo("layerInfo", dividenteDemaniale);
@@ -267,7 +267,7 @@ $('#dsmLidar').on('change', function() {
     let isChecked = $(this).is(':checked');
     if (isChecked) {
         map.addLayer(dsmLidar);
-        getElementLegendImg('legenddsmLidar', dsmLidar, wmsSourceStabiae, 'dsm_lidar_1m');
+        getElementLegendImg('legenddsmLidar', dsmLidar, wmsSourceStabiae, 'dsm_1m');
         layerOpacity(dsmLidar, 'dsmLidarslider', 'OUTPUTdsmLidar');
         layerZIndex(dsmLidar, 'dsmLidarzIndex', 'OUTPUTdsmLidar');
         getElementInfo("layerInfo", dsmLidar);
@@ -293,11 +293,115 @@ $('#dtmLidar').on('change', function() {
     let isChecked = $(this).is(':checked');
     if (isChecked) {
         map.addLayer(dtmLidar);
-        getElementLegendImg('legenddtmLidar', dtmLidar, wmsSourceStabiae, 'dtm_lidar_1m');
+        getElementLegendImg('legenddtmLidar', dtmLidar, wmsSourceStabiae, 'dtm_1m');
         layerOpacity(dtmLidar, 'dtmLidarslider', 'OUTPUTdtmLidar');
         layerZIndex(dtmLidar, 'dtmLidarzIndex', 'OUTPUTdtmLidar');
         getElementInfo("layerInfo", dtmLidar);
     } else {
         map.removeLayer(dtmLidar);
+    }
+});
+
+var alberiMonumentali = new ol.layer.Tile({
+    source: new ol.source.TileWMS({
+    url: wmsSourceStabiae,
+    params: {
+        'LAYERS': 'Alberi_monumentali',
+        //'STYLES': 'CLC2018',
+    }
+    }),
+    minZoom: 0,
+    maxZoom: 28,
+    zIndex: 1,
+    opacity: 1.00
+});
+$('#alberiMonumentali').on('change', function() {
+    let isChecked = $(this).is(':checked');
+    if (isChecked) {
+        map.addLayer(alberiMonumentali);
+        getElementLegendImg('legendalberiMonumentali', alberiMonumentali, wmsSourceStabiae, 'Alberi_monumentali');
+        layerOpacity(alberiMonumentali, 'alberiMonumentalislider', 'OUTPUTalberiMonumentali');
+        layerZIndex(alberiMonumentali, 'alberiMonumentalizIndex', 'OUTPUTalberiMonumentali');
+        getElementInfo("layerInfo", alberiMonumentali);
+    } else {
+        map.removeLayer(alberiMonumentali);
+    }
+});
+
+var mareggiate = new ol.layer.Tile({
+    source: new ol.source.TileWMS({
+    url: wmsSourceStabiae,
+    params: {
+        'LAYERS': 'Aree_attenzione_mareggiate',
+        //'STYLES': 'CLC2018',
+    }
+    }),
+    minZoom: 0,
+    maxZoom: 28,
+    zIndex: 1,
+    opacity: 1.00
+});
+$('#mareggiate').on('change', function() {
+    let isChecked = $(this).is(':checked');
+    if (isChecked) {
+        map.addLayer(mareggiate);
+        getElementLegendImg('legendmareggiate', mareggiate, wmsSourceStabiae, 'Aree_attenzione_mareggiate');
+        layerOpacity(mareggiate, 'mareggiateslider', 'OUTPUTmareggiate');
+        layerZIndex(mareggiate, 'mareggiatezIndex', 'OUTPUTmareggiate');
+        getElementInfo("layerInfo", mareggiate);
+    } else {
+        map.removeLayer(mareggiate);
+    }
+});
+
+var areeBoscate = new ol.layer.Tile({
+    source: new ol.source.TileWMS({
+    url: wmsSourceStabiae,
+    params: {
+        'LAYERS': 'Aree_boscate',
+        //'STYLES': 'CLC2018',
+    }
+    }),
+    minZoom: 0,
+    maxZoom: 28,
+    zIndex: 1,
+    opacity: 1.00
+});
+$('#areeBoscate').on('change', function() {
+    let isChecked = $(this).is(':checked');
+    if (isChecked) {
+        map.addLayer(areeBoscate);
+        getElementLegendImg('legendareeBoscate', areeBoscate, wmsSourceStabiae, 'Aree_boscate');
+        layerOpacity(areeBoscate, 'areeBoscateslider', 'OUTPUTareeBoscate');
+        layerZIndex(areeBoscate, 'areeBoscatezIndex', 'OUTPUTareeBoscate');
+        getElementInfo("layerInfo", areeBoscate);
+    } else {
+        map.removeLayer(areeBoscate);
+    }
+});
+
+var beniReligiosi = new ol.layer.Tile({
+    source: new ol.source.TileWMS({
+    url: wmsSourceStabiae,
+    params: {
+        'LAYERS': 'Beni_Religiosi',
+        //'STYLES': 'CLC2018',
+    }
+    }),
+    minZoom: 0,
+    maxZoom: 28,
+    zIndex: 1,
+    opacity: 1.00
+});
+$('#beniReligiosi').on('change', function() {
+    let isChecked = $(this).is(':checked');
+    if (isChecked) {
+        map.addLayer(beniReligiosi);
+        getElementLegendImg('legendbeniReligiosi', beniReligiosi, wmsSourceStabiae, 'Beni_Religiosi');
+        layerOpacity(beniReligiosi, 'beniReligiosislider', 'OUTPUTbeniReligiosi');
+        layerZIndex(beniReligiosi, 'beniReligiosizIndex', 'OUTPUTbeniReligiosi');
+        getElementInfo("layerInfo", beniReligiosi);
+    } else {
+        map.removeLayer(beniReligiosi);
     }
 });
