@@ -488,3 +488,103 @@ $('#beniVincolati').on('change', function() {
         map.removeLayer(beniVincolati);
     }
 });
+
+var decretoVincoloPaesaggistico = new ol.layer.Tile({
+    source: new ol.source.TileWMS({
+    url: wmsSourceStabiae,
+    params: {
+        'LAYERS': 'Decreti_vincolo_paesaggistico',
+    }
+    }),
+    minZoom: 0,
+    maxZoom: 28,
+    zIndex: 1,
+    opacity: 1.00
+});
+$('#decretoVincoloPaesaggistico').on('change', function() {
+    let isChecked = $(this).is(':checked');
+    if (isChecked) {
+        map.addLayer(decretoVincoloPaesaggistico);
+        getElementLegendImg('legenddecretoVincoloPaesaggistico', decretoVincoloPaesaggistico, wmsSourceStabiae, 'Decreti_vincolo_paesaggistico');
+        layerOpacity(decretoVincoloPaesaggistico, 'decretoVincoloPaesaggisticoslider', 'OUTPUTdecretoVincoloPaesaggistico');
+        layerZIndex(decretoVincoloPaesaggistico, 'decretoVincoloPaesaggisticozIndex', 'OUTPUTdecretoVincoloPaesaggistico');
+        getElementInfo("layerInfo", decretoVincoloPaesaggistico);
+    } else {
+        map.removeLayer(decretoVincoloPaesaggistico);
+    }
+});
+
+var edificiDismessi = new ol.layer.Tile({
+    source: new ol.source.TileWMS({
+    url: wmsSourceStabiae,
+    params: {
+        'LAYERS': 'Edifici_Dismessi',
+    }
+    }),
+    minZoom: 0,
+    maxZoom: 28,
+    zIndex: 1,
+    opacity: 1.00
+});
+$('#edificiDismessi').on('change', function() {
+    let isChecked = $(this).is(':checked');
+    if (isChecked) {
+        map.addLayer(edificiDismessi);
+        getElementLegendImg('legendedificiDismessi', edificiDismessi, wmsSourceStabiae, 'Edifici_Dismessi');
+        layerOpacity(edificiDismessi, 'edificiDismessislider', 'OUTPUTedificiDismessi');
+        layerZIndex(edificiDismessi, 'edificiDismessizIndex', 'OUTPUTedificiDismessi');
+        getElementInfo("layerInfo", edificiDismessi);
+    } else {
+        map.removeLayer(edificiDismessi);
+    }
+});
+
+var edificiVincolati = new ol.layer.Tile({
+    source: new ol.source.TileWMS({
+    url: wmsSourceStabiae,
+    params: {
+        'LAYERS': 'Edifici_vincolati',
+    }
+    }),
+    minZoom: 0,
+    maxZoom: 28,
+    zIndex: 1,
+    opacity: 1.00
+});
+$('#edificiVincolati').on('change', function() {
+    let isChecked = $(this).is(':checked');
+    if (isChecked) {
+        map.addLayer(edificiVincolati);
+        getElementLegendImg('legendedificiVincolati', edificiVincolati, wmsSourceStabiae, 'Edifici_vincolati');
+        layerOpacity(edificiVincolati, 'edificiVincolatislider', 'OUTPUTedificiVincolati');
+        layerZIndex(edificiVincolati, 'edificiVincolatizIndex', 'OUTPUTedificiVincolati');
+        getElementInfo("layerInfo", edificiVincolati);
+    } else {
+        map.removeLayer(edificiVincolati);
+    }
+});
+
+var fasciaCostiera = new ol.layer.Tile({
+    source: new ol.source.TileWMS({
+    url: wmsSourceStabiae,
+    params: {
+        'LAYERS': 'Fascia_costiera___rif__L__Galasso',
+    }
+    }),
+    minZoom: 0,
+    maxZoom: 28,
+    zIndex: 1,
+    opacity: 1.00
+});
+$('#fasciaCostiera').on('change', function() {
+    let isChecked = $(this).is(':checked');
+    if (isChecked) {
+        map.addLayer(fasciaCostiera);
+        getElementLegendImg('legendfasciaCostiera', fasciaCostiera, wmsSourceStabiae, 'Fascia_costiera___rif__L__Galasso');
+        layerOpacity(fasciaCostiera, 'fasciaCostieraslider', 'OUTPUTfasciaCostiera');
+        layerZIndex(fasciaCostiera, 'fasciaCostierazIndex', 'OUTPUTfasciaCostiera');
+        getElementInfo("layerInfo", fasciaCostiera);
+    } else {
+        map.removeLayer(fasciaCostiera);
+    }
+});

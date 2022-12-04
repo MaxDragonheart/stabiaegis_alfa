@@ -702,6 +702,169 @@
                         </div>
                     </div>
 
+                    <div class="control-box">
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" name="switch-basemap" id="decretoVincoloPaesaggistico">
+                            <label class="custom-control-label" for="decretoVincoloPaesaggistico">Decreti di vincolo paesaggistico</label>
+                        </div>
+                        <div class="text-end">
+                            <a class="item-legend" data-bs-toggle="collapse" href="#decretoVincoloPaesaggisticolegend"
+                                role="button" aria-expanded="false" aria-controls="decretoVincoloPaesaggisticolegend"
+                                data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
+                                <i class="fas fa-book"></i>
+                            </a>
+                            <div class="collapse" id="decretoVincoloPaesaggisticolegend">
+                              <div id="legenddecretoVincoloPaesaggistico"></div>
+                            </div>
+                        </div>
+                        <div class="text-end">
+                            <a class="item-controls" data-bs-toggle="collapse" href="#decretoVincoloPaesaggisticocontrols"
+                                role="button" aria-expanded="false" aria-controls="decretoVincoloPaesaggisticocontrols"
+                                data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
+                                <i class="fas fa-cogs"></i>
+                            </a>
+                            <div class="collapse" id="decretoVincoloPaesaggisticocontrols">
+                              <div class="slider-container">
+                                <input type="range" class="form-range"
+                                        min="0" max="100" value="100" id="decretoVincoloPaesaggisticoslider">
+                                <label class="">Trasparenza: <span id="OUTPUTdecretoVincoloPaesaggistico"></span> %</label>
+                              </div>
+                              <div class="counter-container">
+                                <div class="counter" id="">
+                                  <input class="counter-object" id="decretoVincoloPaesaggisticozIndex"
+                                          type="number" name="zIndex" min="0" max="99" step="1"
+                                          placeholder="0"
+                                          value="0">
+                                </div>
+                                <label class="">z-Index</label>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="control-box">
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" name="switch-basemap" id="edificiDismessi">
+                            <label class="custom-control-label" for="edificiDismessi">Edifici dismessi</label>
+                        </div>
+                        <div class="text-end">
+                            <a class="item-legend" data-bs-toggle="collapse" href="#edificiDismessilegend"
+                                role="button" aria-expanded="false" aria-controls="edificiDismessilegend"
+                                data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
+                                <i class="fas fa-book"></i>
+                            </a>
+                            <div class="collapse" id="edificiDismessilegend">
+                              <div id="legendedificiDismessi"></div>
+                            </div>
+                        </div>
+                        <div class="text-end">
+                            <a class="item-controls" data-bs-toggle="collapse" href="#edificiDismessicontrols"
+                                role="button" aria-expanded="false" aria-controls="edificiDismessicontrols"
+                                data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
+                                <i class="fas fa-cogs"></i>
+                            </a>
+                            <div class="collapse" id="edificiDismessicontrols">
+                              <div class="slider-container">
+                                <input type="range" class="form-range"
+                                        min="0" max="100" value="100" id="edificiDismessislider">
+                                <label class="">Trasparenza: <span id="OUTPUTedificiDismessi"></span> %</label>
+                              </div>
+                              <div class="counter-container">
+                                <div class="counter" id="">
+                                  <input class="counter-object" id="edificiDismessizIndex"
+                                          type="number" name="zIndex" min="0" max="99" step="1"
+                                          placeholder="0"
+                                          value="0">
+                                </div>
+                                <label class="">z-Index</label>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="control-box">
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" name="switch-basemap" id="edificiVincolati">
+                            <label class="custom-control-label" for="edificiVincolati">Edifici vincolati</label>
+                        </div>
+                        <div class="text-end">
+                            <a class="item-legend" data-bs-toggle="collapse" href="#edificiVincolatilegend"
+                                role="button" aria-expanded="false" aria-controls="edificiVincolatilegend"
+                                data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
+                                <i class="fas fa-book"></i>
+                            </a>
+                            <div class="collapse" id="edificiVincolatilegend">
+                              <div id="legendedificiVincolati"></div>
+                            </div>
+                        </div>
+                        <div class="text-end">
+                            <a class="item-controls" data-bs-toggle="collapse" href="#edificiVincolaticontrols"
+                                role="button" aria-expanded="false" aria-controls="edificiVincolaticontrols"
+                                data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
+                                <i class="fas fa-cogs"></i>
+                            </a>
+                            <div class="collapse" id="edificiVincolaticontrols">
+                              <div class="slider-container">
+                                <input type="range" class="form-range"
+                                        min="0" max="100" value="100" id="edificiVincolatislider">
+                                <label class="">Trasparenza: <span id="OUTPUTedificiVincolati"></span> %</label>
+                              </div>
+                              <div class="counter-container">
+                                <div class="counter" id="">
+                                  <input class="counter-object" id="edificiVincolatizIndex"
+                                          type="number" name="zIndex" min="0" max="99" step="1"
+                                          placeholder="0"
+                                          value="0">
+                                </div>
+                                <label class="">z-Index</label>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="control-box">
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" name="switch-basemap" id="fasciaCostiera">
+                            <label class="custom-control-label" for="fasciaCostiera">Fascia costiera - Legge Galasso</label>
+                        </div>
+                        <div class="text-end">
+                            <a class="item-legend" data-bs-toggle="collapse" href="#fasciaCostieralegend"
+                                role="button" aria-expanded="false" aria-controls="fasciaCostieralegend"
+                                data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
+                                <i class="fas fa-book"></i>
+                            </a>
+                            <div class="collapse" id="fasciaCostieralegend">
+                              <div id="legendfasciaCostiera"></div>
+                            </div>
+                        </div>
+                        <div class="text-end">
+                            <a class="item-controls" data-bs-toggle="collapse" href="#fasciaCostieracontrols"
+                                role="button" aria-expanded="false" aria-controls="fasciaCostieracontrols"
+                                data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
+                                <i class="fas fa-cogs"></i>
+                            </a>
+                            <div class="collapse" id="fasciaCostieracontrols">
+                              <div class="slider-container">
+                                <input type="range" class="form-range"
+                                        min="0" max="100" value="100" id="fasciaCostieraslider">
+                                <label class="">Trasparenza: <span id="OUTPUTfasciaCostiera"></span> %</label>
+                              </div>
+                              <div class="counter-container">
+                                <div class="counter" id="">
+                                  <input class="counter-object" id="fasciaCostierazIndex"
+                                          type="number" name="zIndex" min="0" max="99" step="1"
+                                          placeholder="0"
+                                          value="0">
+                                </div>
+                                <label class="">z-Index</label>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
                   </div>
                 </div>
               </div>
