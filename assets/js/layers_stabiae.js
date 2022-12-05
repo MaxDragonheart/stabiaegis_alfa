@@ -688,3 +688,78 @@ $('#parcoArcheologico').on('change', function() {
         map.removeLayer(parcoArcheologico);
     }
 });
+
+var parcoSarno = new ol.layer.Tile({
+    source: new ol.source.TileWMS({
+    url: wmsSourceStabiae,
+    params: {
+        'LAYERS': 'Parco_Ente_Fiume_Sarno',
+    }
+    }),
+    minZoom: 0,
+    maxZoom: 28,
+    zIndex: 1,
+    opacity: 1.00
+});
+$('#parcoSarno').on('change', function() {
+    let isChecked = $(this).is(':checked');
+    if (isChecked) {
+        map.addLayer(parcoSarno);
+        getElementLegendImg('legendparcoSarno', parcoSarno, wmsSourceStabiae, 'Parco_Ente_Fiume_Sarno');
+        layerOpacity(parcoSarno, 'parcoSarnoslider', 'OUTPUTparcoSarno');
+        layerZIndex(parcoSarno, 'parcoSarnozIndex', 'OUTPUTparcoSarno');
+        getElementInfo("layerInfo", parcoSarno);
+    } else {
+        map.removeLayer(parcoSarno);
+    }
+});
+
+var parcoLattari = new ol.layer.Tile({
+    source: new ol.source.TileWMS({
+    url: wmsSourceStabiae,
+    params: {
+        'LAYERS': 'Parco_Monti_Lattari',
+    }
+    }),
+    minZoom: 0,
+    maxZoom: 28,
+    zIndex: 1,
+    opacity: 1.00
+});
+$('#parcoLattari').on('change', function() {
+    let isChecked = $(this).is(':checked');
+    if (isChecked) {
+        map.addLayer(parcoLattari);
+        getElementLegendImg('legendparcoLattari', parcoLattari, wmsSourceStabiae, 'Parco_Monti_Lattari');
+        layerOpacity(parcoLattari, 'parcoLattarislider', 'OUTPUTparcoLattari');
+        layerZIndex(parcoLattari, 'parcoLattarizIndex', 'OUTPUTparcoLattari');
+        getElementInfo("layerInfo", parcoLattari);
+    } else {
+        map.removeLayer(parcoLattari);
+    }
+});
+
+var perimetrazioneUrbana = new ol.layer.Tile({
+    source: new ol.source.TileWMS({
+    url: wmsSourceStabiae,
+    params: {
+        'LAYERS': 'Perimetrazione_centro_abitato',
+    }
+    }),
+    minZoom: 0,
+    maxZoom: 28,
+    zIndex: 1,
+    opacity: 1.00
+});
+$('#perimetrazioneUrbana').on('change', function() {
+    let isChecked = $(this).is(':checked');
+    if (isChecked) {
+        map.addLayer(perimetrazioneUrbana);
+        getElementLegendImg('legendperimetrazioneUrbana', perimetrazioneUrbana, wmsSourceStabiae, 'Perimetrazione_centro_abitato');
+        layerOpacity(perimetrazioneUrbana, 'perimetrazioneUrbanaslider', 'OUTPUTperimetrazioneUrbana');
+        layerZIndex(perimetrazioneUrbana, 'perimetrazioneUrbanazIndex', 'OUTPUTperimetrazioneUrbana');
+        getElementInfo("layerInfo", perimetrazioneUrbana);
+    } else {
+        map.removeLayer(perimetrazioneUrbana);
+    }
+});

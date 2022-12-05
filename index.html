@@ -1022,7 +1022,125 @@
                         </div>
                     </div>
 
+                    <div class="control-box">
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" name="switch-basemap" id="parcoSarno">
+                            <label class="custom-control-label" for="parcoSarno">Parco Ente Fiume Sarno</label>
+                        </div>
+                        <div class="text-end">
+                            <a class="item-legend" data-bs-toggle="collapse" href="#parcoSarnolegend"
+                                role="button" aria-expanded="false" aria-controls="parcoSarnolegend"
+                                data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
+                                <i class="fas fa-book"></i>
+                            </a>
+                            <div class="collapse" id="parcoSarnolegend">
+                              <div id="legendparcoSarno"></div>
+                            </div>
+                        </div>
+                        <div class="text-end">
+                            <a class="item-controls" data-bs-toggle="collapse" href="#parcoSarnocontrols"
+                                role="button" aria-expanded="false" aria-controls="parcoSarnocontrols"
+                                data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
+                                <i class="fas fa-cogs"></i>
+                            </a>
+                            <div class="collapse" id="parcoSarnocontrols">
+                              <div class="slider-container">
+                                <input type="range" class="form-range"
+                                        min="0" max="100" value="100" id="parcoSarnoslider">
+                                <label class="">Trasparenza: <span id="OUTPUTparcoSarno"></span> %</label>
+                              </div>
+                              <div class="counter-container">
+                                <div class="counter" id="">
+                                  <input class="counter-object" id="parcoSarnozIndex"
+                                          type="number" name="zIndex" min="0" max="99" step="1"
+                                          placeholder="0"
+                                          value="0">
+                                </div>
+                                <label class="">z-Index</label>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
 
+                    <div class="control-box">
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" name="switch-basemap" id="parcoLattari">
+                            <label class="custom-control-label" for="parcoLattari">Parco Monti Lattari</label>
+                        </div>
+                        <div class="text-end">
+                            <a class="item-legend" data-bs-toggle="collapse" href="#parcoLattarilegend"
+                                role="button" aria-expanded="false" aria-controls="parcoLattarilegend"
+                                data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
+                                <i class="fas fa-book"></i>
+                            </a>
+                            <div class="collapse" id="parcoLattarilegend">
+                              <div id="legendparcoLattari"></div>
+                            </div>
+                        </div>
+                        <div class="text-end">
+                            <a class="item-controls" data-bs-toggle="collapse" href="#parcoLattaricontrols"
+                                role="button" aria-expanded="false" aria-controls="parcoLattaricontrols"
+                                data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
+                                <i class="fas fa-cogs"></i>
+                            </a>
+                            <div class="collapse" id="parcoLattaricontrols">
+                              <div class="slider-container">
+                                <input type="range" class="form-range"
+                                        min="0" max="100" value="100" id="parcoLattarislider">
+                                <label class="">Trasparenza: <span id="OUTPUTparcoLattari"></span> %</label>
+                              </div>
+                              <div class="counter-container">
+                                <div class="counter" id="">
+                                  <input class="counter-object" id="parcoLattarizIndex"
+                                          type="number" name="zIndex" min="0" max="99" step="1"
+                                          placeholder="0"
+                                          value="0">
+                                </div>
+                                <label class="">z-Index</label>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="control-box">
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" name="switch-basemap" id="perimetrazioneUrbana">
+                            <label class="custom-control-label" for="perimetrazioneUrbana">Perimetrazione del centro abitato</label>
+                        </div>
+                        <div class="text-end">
+                            <a class="item-legend" data-bs-toggle="collapse" href="#perimetrazioneUrbanalegend"
+                                role="button" aria-expanded="false" aria-controls="perimetrazioneUrbanalegend"
+                                data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
+                                <i class="fas fa-book"></i>
+                            </a>
+                            <div class="collapse" id="perimetrazioneUrbanalegend">
+                              <div id="legendperimetrazioneUrbana"></div>
+                            </div>
+                        </div>
+                        <div class="text-end">
+                            <a class="item-controls" data-bs-toggle="collapse" href="#perimetrazioneUrbanacontrols"
+                                role="button" aria-expanded="false" aria-controls="perimetrazioneUrbanacontrols"
+                                data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
+                                <i class="fas fa-cogs"></i>
+                            </a>
+                            <div class="collapse" id="perimetrazioneUrbanacontrols">
+                              <div class="slider-container">
+                                <input type="range" class="form-range"
+                                        min="0" max="100" value="100" id="perimetrazioneUrbanaslider">
+                                <label class="">Trasparenza: <span id="OUTPUTperimetrazioneUrbana"></span> %</label>
+                              </div>
+                              <div class="counter-container">
+                                <div class="counter" id="">
+                                  <input class="counter-object" id="perimetrazioneUrbanazIndex"
+                                          type="number" name="zIndex" min="0" max="99" step="1"
+                                          placeholder="0"
+                                          value="0">
+                                </div>
+                                <label class="">z-Index</label>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
 
                   </div>
                 </div>
