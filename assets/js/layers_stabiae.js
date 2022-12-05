@@ -588,3 +588,103 @@ $('#fasciaCostiera').on('change', function() {
         map.removeLayer(fasciaCostiera);
     }
 });
+
+var geositi = new ol.layer.Tile({
+    source: new ol.source.TileWMS({
+    url: wmsSourceStabiae,
+    params: {
+        'LAYERS': 'Geositi',
+    }
+    }),
+    minZoom: 0,
+    maxZoom: 28,
+    zIndex: 1,
+    opacity: 1.00
+});
+$('#geositi').on('change', function() {
+    let isChecked = $(this).is(':checked');
+    if (isChecked) {
+        map.addLayer(geositi);
+        getElementLegendImg('legendgeositi', geositi, wmsSourceStabiae, 'Geositi');
+        layerOpacity(geositi, 'geositislider', 'OUTPUTgeositi');
+        layerZIndex(geositi, 'geositizIndex', 'OUTPUTgeositi');
+        getElementInfo("layerInfo", geositi);
+    } else {
+        map.removeLayer(geositi);
+    }
+});
+
+var put3587 = new ol.layer.Tile({
+    source: new ol.source.TileWMS({
+    url: wmsSourceStabiae,
+    params: {
+        'LAYERS': 'PUT___L_r__35_87',
+    }
+    }),
+    minZoom: 0,
+    maxZoom: 28,
+    zIndex: 1,
+    opacity: 1.00
+});
+$('#put3587').on('change', function() {
+    let isChecked = $(this).is(':checked');
+    if (isChecked) {
+        map.addLayer(put3587);
+        getElementLegendImg('legendput3587', put3587, wmsSourceStabiae, 'PUT___L_r__35_87');
+        layerOpacity(put3587, 'put3587slider', 'OUTPUTput3587');
+        layerZIndex(put3587, 'put3587zIndex', 'OUTPUTput3587');
+        getElementInfo("layerInfo", put3587);
+    } else {
+        map.removeLayer(put3587);
+    }
+});
+
+var parchiRegionali = new ol.layer.Tile({
+    source: new ol.source.TileWMS({
+    url: wmsSourceStabiae,
+    params: {
+        'LAYERS': 'Parchi_regionali',
+    }
+    }),
+    minZoom: 0,
+    maxZoom: 28,
+    zIndex: 1,
+    opacity: 1.00
+});
+$('#parchiRegionali').on('change', function() {
+    let isChecked = $(this).is(':checked');
+    if (isChecked) {
+        map.addLayer(parchiRegionali);
+        getElementLegendImg('legendparchiRegionali', parchiRegionali, wmsSourceStabiae, 'Parchi_regionali');
+        layerOpacity(parchiRegionali, 'parchiRegionalislider', 'OUTPUTparchiRegionali');
+        layerZIndex(parchiRegionali, 'parchiRegionalizIndex', 'OUTPUTparchiRegionali');
+        getElementInfo("layerInfo", parchiRegionali);
+    } else {
+        map.removeLayer(parchiRegionali);
+    }
+});
+
+var parcoArcheologico = new ol.layer.Tile({
+    source: new ol.source.TileWMS({
+    url: wmsSourceStabiae,
+    params: {
+        'LAYERS': 'Parco_Archeologico',
+    }
+    }),
+    minZoom: 0,
+    maxZoom: 28,
+    zIndex: 1,
+    opacity: 1.00
+});
+$('#parcoArcheologico').on('change', function() {
+    let isChecked = $(this).is(':checked');
+    if (isChecked) {
+        map.addLayer(parcoArcheologico);
+        getElementLegendImg('legendparcoArcheologico', parcoArcheologico, wmsSourceStabiae, 'Parco_Archeologico');
+        layerOpacity(parcoArcheologico, 'parcoArcheologicoslider', 'OUTPUTparcoArcheologico');
+        layerZIndex(parcoArcheologico, 'parcoArcheologicozIndex', 'OUTPUTparcoArcheologico');
+        getElementInfo("layerInfo", parcoArcheologico);
+    } else {
+        map.removeLayer(parcoArcheologico);
+    }
+});
